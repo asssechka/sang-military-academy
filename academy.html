@@ -238,5 +238,696 @@
       display: inline-block;
       color: var(--gold);
       font: 700 13px "Barlow Condensed", sans-serif;
-      letter-spacing:
-      
+      letter-spacing: .18em;
+    }
+
+    .info-card h3 {
+      margin: 8px 0 14px;
+      font: 600 24px/1.2 "Barlow Condensed", sans-serif;
+      color: var(--gold-bright);
+    }
+
+    .info-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    .info-card li + li {
+      margin-top: 6px;
+    }
+
+    /* GUIDE INTRO */
+    .guide-intro {
+      margin: 0 0 24px;
+      padding: 22px 26px;
+      border: 1px solid rgba(197, 166, 101, .35);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      background: linear-gradient(100deg, rgba(197, 166, 101, .12), rgba(18, 26, 19, .95));
+    }
+
+    .guide-intro h3 {
+      margin: 0 0 8px;
+      font: 700 28px/1.15 "Barlow Condensed", sans-serif;
+      letter-spacing: .03em;
+      color: var(--gold-bright);
+    }
+
+    .guide-intro p {
+      margin: 0;
+      color: #d6dbd0;
+      font-size: 13.5px;
+    }
+
+    /* ACADEMY GUIDE CARDS */
+    .academy-guide {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .guide-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(197, 166, 101, .45);
+    }
+
+    .guide-card h3 {
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      font: 700 25px/1.2 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-number {
+      color: var(--gold-bright);
+    }
+
+    .guide-card h4 {
+      margin: 16px 0 6px;
+      font: 700 13px/1.3 "Manrope", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--gold);
+    }
+
+    .guide-card h4:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-card p {
+      margin: 0 0 8px;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    .guide-card ul,
+    .guide-card ol {
+      margin: 4px 0 10px;
+      padding-left: 20px;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    .guide-card li {
+      margin-bottom: 5px;
+    }
+
+    .guide-card strong {
+      color: #ffffff;
+    }
+
+    /* CALLOUT BOXES INSIDE CARDS */
+    .guide-warning {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 9px;
+      border: 1px solid rgba(196, 124, 104, .35);
+      border-left: 3px solid var(--red);
+      background: rgba(196, 124, 104, .08);
+    }
+
+    .guide-warning > strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #eab3a4;
+      font-size: 13px;
+    }
+
+    .guide-warning p,
+    .guide-warning ul {
+      margin: 4px 0 0;
+      font-size: 12.5px;
+      color: #ded6d3;
+    }
+
+    .guide-success {
+      border-color: rgba(120, 139, 98, .4);
+      border-left-color: var(--green);
+      background: rgba(120, 139, 98, .1);
+    }
+
+    .guide-success > strong {
+      color: #c7d9b2;
+    }
+
+    .working-hours-list {
+      padding-left: 18px;
+      margin-top: 6px !important;
+    }
+
+    /* KEYCAPS & LINKS */
+    .guide-key {
+      display: inline-block;
+      padding: 1px 7px;
+      margin-right: 3px;
+      border: 1px solid rgba(197, 166, 101, .5);
+      border-radius: 5px;
+      background: rgba(197, 166, 101, .14);
+      color: var(--gold-bright);
+      font-weight: 800;
+      font-size: 11.5px;
+    }
+
+    .guide-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      padding: 9px 14px;
+      border: 1px solid rgba(197, 166, 101, .4);
+      border-radius: 7px;
+      background: rgba(197, 166, 101, .1);
+      color: var(--gold-bright);
+      font-size: 12.5px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .guide-link:hover {
+      background: rgba(197, 166, 101, .2);
+      border-color: var(--gold-bright);
+      transform: translateX(2px);
+    }
+
+    /* NOTICE */
+    .notice {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 32px 0 10px;
+      padding: 21px 24px;
+      border: 1px solid rgba(197, 166, 101, .25);
+      border-left: 3px solid var(--gold);
+      border-radius: 9px;
+      background: linear-gradient(100deg, rgba(197, 166, 101, .10), rgba(197, 166, 101, .025));
+    }
+
+    .notice strong {
+      display: block;
+      color: var(--gold-bright);
+      font: 700 21px "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .notice p {
+      margin: 0;
+      color: #c5cabd;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: rgba(5, 9, 6, .48);
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 44px));
+      min-height: 94px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font: 700 23px "Barlow Condensed", sans-serif;
+      letter-spacing: .1em;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+      font: 600 9px "Manrope", sans-serif;
+      letter-spacing: .14em;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: #8e9788;
+      font-size: 9px;
+      letter-spacing: .16em;
+    }
+
+    .copyright {
+      text-align: right;
+      letter-spacing: .04em !important;
+    }
+
+    /* BACK TO TOP */
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(197, 166, 101, .45);
+      border-radius: 8px;
+      color: var(--gold-bright);
+      background: #182019;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: .2s;
+    }
+
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .main-nav {
+        gap: 0;
+      }
+      .nav-link {
+        padding: 9px 8px;
+        font-size: 11px;
+      }
+      .header-inner {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .info-grid,
+      .academy-guide {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .header-inner {
+        min-height: 70px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 69px;
+        left: 0;
+        right: 0;
+        padding: 12px 22px 18px;
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(11, 16, 12, .98);
+        border-bottom: 1px solid var(--line);
+      }
+      .main-nav.open {
+        display: flex;
+      }
+      .nav-link {
+        padding: 12px;
+        font-size: 12px;
+      }
+      .footer-inner {
+        padding: 22px 0;
+        flex-wrap: wrap;
+      }
+      .copyright {
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-banner-inner,
+      .section-wrap,
+      .header-inner,
+      .footer-inner {
+        width: min(100% - 30px, var(--max));
+      }
+      .guide-card,
+      .info-card {
+        padding: 20px;
+      }
+      .footer-inner p {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
+        <span class="brand-mark"><span>✦</span></span>
+        <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link active" href="academy.html">Правила</a>
+        <a class="nav-link" href="leadership.html">Руководство</a>
+        <a class="nav-link" href="rules.html">Подразделения</a>
+        <a class="nav-link" href="promotions.html">Повышения</a>
+        <a class="nav-link" href="exams.html">Экзамены</a>
+        <a class="nav-link" href="materials.html">Материалы</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section page-section" id="academy">
+      <div class="page-banner">
+        <div class="page-banner-inner">
+          <p class="eyebrow">WELCOME TO THE ACADEMY</p>
+          <h2>Military Academy</h2>
+          <p>Подготовка, обучение и становление будущих военнослужащих.</p>
+        </div>
+      </div>
+
+      <div class="section-wrap narrow">
+        <div class="section-heading left">
+          <p class="eyebrow">ABOUT MA</p>
+          <h2>О подразделении</h2>
+          <p>
+            Military Academy (MA) — подразделение, ответственное за первичную
+            подготовку новобранцев, знакомство с порядком службы и проверку
+            усвоенных знаний.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <span class="number">01</span>
+            <h3>Основные задачи MA</h3>
+            <ul>
+              <li>Проведение наборов и первичного отбора.</li>
+              <li>Обучение новобранцев основам службы.</li>
+              <li>Проведение экзаменов и принятие присяг.</li>
+              <li>Контроль знаний и дисциплины.</li>
+              <li>Подготовка военнослужащих к дальнейшей службе.</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <span class="number">02</span>
+            <h3>Что требуется от новобранца</h3>
+            <ul>
+              <li>Изучать устав и правила фракции.</li>
+              <li>Соблюдать субординацию.</li>
+              <li>Выполнять законные приказы старшего состава.</li>
+              <li>Быть ответственным и активным.</li>
+              <li>Уточнять непонятные моменты у наставников.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="guide-intro">
+          <h3>🎖️ ПАМЯТКА АКАДЕМИКА SANG</h3>
+          <p>
+            <strong>⚠️ Главное правило:</strong>
+            Не знаешь, как поступить — спроси в <strong>/f</strong> или Discord.
+            Самодеятельность приводит к выговорам, НВС или тюрьме.
+          </p>
+        </div>
+
+        <div class="academy-guide">
+          <!-- 1 -->
+          <article class="guide-card">
+            <h3><span class="guide-number">01.</span> 🫡 Общение и иерархия</h3>
+
+            <h4>Субординация</h4>
+            <p>Строго деловой тон.</p>
+            <ul>
+              <li>🚫 Запрещены фамильярность и оскорбления других фракций и крайма.</li>
+            </ul>
+
+            <h4>Провокации и конфликты</h4>
+            <p>На байты и неадекватность, в том числе от старших, <strong>не реагируем</strong>.</p>
+            <ul>
+              <li>🎥 Включаем бодикамеру (откат) и передаём запись руководству (МА, Colonel, General Major).</li>
+              <li>🤫 Не выносим сор из избы: решаем вопросы внутри фракции, без жалоб в ГОВ или админам.</li>
+            </ul>
+
+            <h4>Цепочка обращений</h4>
+            <p>Не перепрыгиваем через голову к генералу.</p>
+            <p><strong>Старший отдела → Куратор → Руководство</strong></p>
+          </article>
+
+          <!-- 2 -->
+          <article class="guide-card">
+            <h3><span class="guide-number">02.</span> 🔫 Оружие, КПП и огонь</h3>
+
+            <h4>КПП</h4>
+            <p>
+              Академикам находиться на КПП <strong>СТРОГО ЗАПРЕЩЕНО</strong>
+              (там только МА и МП). Все вопросы — в <strong>/f</strong> или спецсвязь.
+            </p>
+
+            <h4>Снаряжение</h4>
+            <ul>
+              <li>🚫 Запрещено носить наручники.</li>
+              <li>🚫 Запрещено проводить задержания.</li>
+              <li>🚫 Запрещено доставать оружие или целиться без причины.</li>
+              <li>🚫 Запрещено держать оружие в быстром слоте.</li>
+            </ul>
+
+            <h4>Незнакомцы на ФЗ</h4>
+            <p>
+              Не угрожать и не стрелять. Сразу докладываем в <strong>/f</strong>,
+              старшие разберутся.
+            </p>
+
+            <h4>Открытие огня разрешено ТОЛЬКО если:</h4>
+            <ol>
+              <li>По вам открыли огонь.</li>
+              <li>Есть прямая угроза (достали оружие).</li>
+              <li>Вам нанесён урон (DB, удары).</li>
+            </ol>
+            <p>В остальных случаях вызываем МП.</p>
+
+            <div class="guide-warning">
+              <strong>❗ Помощь раненым</strong>
+              <p>
+                Игнорировать лежащих на КПП-2 / ФЗ нельзя — оказываем ПМП
+                (эпинефрин) или вызываем скорую.
+              </p>
+              <p>
+                Если убили человека в бою — <strong>обязаны</strong> поднять его
+                и передать МП/старшим вместе с откатом для процессуальных действий.
+                Иначе — наказание за НРП.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="guide-card">
+            <h3><span class="guide-number">03.</span> 👕 Форма и выход с форта</h3>
+
+            <h4>Внешний вид</h4>
+            <p>До 12 ранга находиться без формы <strong>запрещено</strong>.</p>
+            <p>👁️ Тепловизор разрешён везде, кроме острова.</p>
+
+            <h4>Покидание ФЗ в рабочее время</h4>
+            <div class="guide-warning guide-success">
+              <strong>🕒 Рабочее время:</strong>
+              <ul class="working-hours-list">
+                <li>С понедельника по пятницу с 12:30 до 00:30, после обязательного ночного дропа в 00:00;</li>
+                <li>С субботы по воскресенье с 14:30 до 00:30, после обязательного ночного дропа в 00:00;</li>
+                <li>В предпраздничные дни с 15:00 до 00:30, после обязательного ночного дропа в 00:00;</li>
+                <li>В праздничные дни с 16:00 до 00:30.</li>
+              </ul>
+            </div>
+
+            <ul>
+              <li>🚫 Запрещено уходить без сопровождения старших или других отделов.</li>
+              <li>✅ Исключение: оформлен отдых на сайте, надета личная одежда и <strong>сняты все ОПЗ</strong> (бодикамера, кобура и т.д.).</li>
+            </ul>
+
+            <h4>Вне рабочего времени</h4>
+            <p>Выход только в личной одежде и на личном транспорте.</p>
+          </article>
+
+          <!-- 4 -->
+          <article class="guide-card">
+            <h3><span class="guide-number">04.</span> 🚨 Нападение на форт</h3>
+
+            <ul>
+              <li>🚫 Запрещено стрелять из ЗЗ (зелёной зоны).</li>
+              <li>🚫 Запрещено РКшиться — возвращаться в бой после смерти.</li>
+            </ul>
+
+            <div class="guide-warning guide-success">
+              <strong>✅ Возврат в бой</strong>
+              <p>
+                Разрешён только при начале нового захвата точки,
+                когда обновился таймер.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="guide-card">
+            <h3><span class="guide-number">05.</span> 📦 Поставки и боевые выезды</h3>
+
+            <h4>Подготовка</h4>
+            <ol>
+              <li>Полный зафуллинг — без хлама в инвентаре.</li>
+              <li>Зайти в нужный войс.</li>
+              <li>Вступить в группу по коду из чата.</li>
+              <li>Встать в строй.</li>
+            </ol>
+
+            <ul>
+              <li>🚁 В вертолёт — только по команде.</li>
+              <li>За руль садятся старшие.</li>
+              <li>Мегафон без знания правил не трогать.</li>
+            </ul>
+
+            <div class="guide-warning">
+              <strong>🔇 Режим тишины</strong>
+              <p>
+                Запрещено спрашивать в чатах: «куда едем / какой маршрут».
+                Это приравнивается к сливу информации крайму.
+              </p>
+            </div>
+
+            <h4>Погрузка — строго по коллу</h4>
+            <p>Выполняем команды быстро / медленно / стоп.</p>
+            <ul>
+              <li><span class="guide-key">[E]</span> — взять коробку.</li>
+              <li><span class="guide-key">[G]</span> — положить в багажник.</li>
+              <li><span class="guide-key">[0]</span> — положить на пол.</li>
+            </ul>
+
+            <h4>Бой на поставке</h4>
+            <ul>
+              <li>Слушаем коллера.</li>
+              <li>Выходим из машин только по команде.</li>
+              <li>Поднимаем раненых союзников.</li>
+              <li><span class="guide-key">[E]</span> — отменить рес, если по вам стреляют.</li>
+            </ul>
+
+            <h4>Если вас убили — ждём колл</h4>
+            <ul>
+              <li>💉 «Продлеваемся» — лежим и ждём рес.</li>
+              <li>🏥 «РК» — респавн в лазарете → перезафуллинг → возврат в строй.</li>
+            </ul>
+
+            <h4>Краш / потерялись</h4>
+            <p>Вернуться на поставку или на ФЗ и ждать регрупа.</p>
+          </article>
+
+          <!-- 6 -->
+          <article class="guide-card">
+            <h3><span class="guide-number">06.</span> 📢 Общий сбор и НВС</h3>
+
+            <p>Явка на общий сбор <strong>ОБЯЗАТЕЛЬНА</strong>.</p>
+
+            <div class="guide-warning">
+              <strong>🚨 Неявка = НВС</strong>
+              <p>Отработка и блокировка:</p>
+              <ul>
+                <li>Повышений.</li>
+                <li>Получения военного билета.</li>
+                <li>Увольнения.</li>
+              </ul>
+            </div>
+
+            <h4>Ошибочный НВС</h4>
+            <p>
+              Например, если вы находились на другой поставке:
+              сделайте скриншоты и отправьте их в канал обжалования.
+            </p>
+
+            <p>
+              <a
+                class="guide-link"
+                href="https://discord.com/channels/1514608098621526096/1514608102056529949"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Открыть канал обжалования НВС в Discord →
+              </a>
+            </p>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong>Запомни!</strong>
+          <p>
+            Дисциплина, внимательность и соблюдение субординации —
+            основа службы в SANG. При возникновении вопросов обращайтесь
+            к старшему составу или руководству Military Academy.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
+      <p>MAJESTIC · MEMPHIS · SANG</p>
+      <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop() || "academy.html";
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+      });
+    }
+
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        toTop.classList.add("visible");
+      } else {
+        toTop.classList.remove("visible");
+      }
+    });
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>

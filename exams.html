@@ -1,131 +1,849 @@
-<!-- SERVICE MEMO: ВБ / ВЫГОВОРЫ / МП -->
-    <section aria-labelledby="memo-title" style="margin-top: 48px;">
-      <h2 class="section-heading" id="memo-title">
-        <span>02</span>
-        Памятка бойца: ВБ, выговоры и МП
-      </h2>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101610">
+  <meta name="description" content="Памятка бойца: военный билет, увольнение, выговоры и мероприятия — SANG Military Academy.">
+  <title>Памятка | SANG Military Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b100c;
+      --panel: #121a13;
+      --panel-2: #172017;
+      --line: rgba(190, 164, 102, .19);
+      --gold: #c5a665;
+      --gold-bright: #e2c783;
+      --text: #f0f0e9;
+      --muted: #a4aa9d;
+      --green: #788b62;
+      --red: #c47c68;
+      --radius: 13px;
+      --max: 1180px;
+    }
 
-      <!-- СЕТКА ИЗ 3 КАРТОЧЕК: ВБ, УВОЛЬНЕНИЕ, ВЫГОВОРЫ -->
-      <div class="memo-grid">
-        <!-- ВОЕННЫЙ БИЛЕТ -->
-        <article class="document-card">
-          <div class="card-top">
-            <span class="card-number">INFO / 01</span>
-            <span class="card-tag">С 7 ранга</span>
-          </div>
-          <h3>Получение военного билета</h3>
-          <ul class="memo-list">
-            <li>После прохождения Академии военный билет выдаётся только при повышении на <strong>7 ранг</strong>.</li>
-            <li>Выполните задания при повышении на 7 ранг и оставьте запрос на военный билет.</li>
-            <li>Дождитесь одобрения запроса, после чего обратитесь за выдачей к одобрившему сотруднику или к любому человеку с соответствующей ролью.</li>
-          </ul>
-          <div class="mini-alert">
-            <strong>Важно:</strong> при активном выговоре военный билет не выдаётся.
-          </div>
-          <div class="document-links" style="margin-top: 14px;">
-            <span class="document-link disabled">
-              <span>Запрос на военный билет (ссылка будет позже)</span>
-              <span class="arrow">⏳</span>
-            </span>
-          </div>
-        </article>
+    * {
+      box-sizing: border-box;
+    }
 
-        <!-- УВОЛЬНЕНИЕ -->
-        <article class="document-card">
-          <div class="card-top">
-            <span class="card-number">INFO / 02</span>
-            <span class="card-tag">Кадры</span>
-          </div>
-          <h3>Как уволиться из SANG</h3>
-          <ul class="memo-list">
-            <li>Оставьте заявление в соответствующем канале Discord.</li>
-            <li>Укажите ваш отдел (если вас не перевели или вы не прошли академию — укажите <strong>Академия</strong>).</li>
-            <li>Приложите скриншот планшета с вашим профилем: <span class="code-inline">Планшет (↓) → SANG → Коллеги → поиск по нику → нажмите на своё имя</span>.</li>
-            <li>Ожидайте рассмотрения — рапорты проверяются в среднем раз в <strong>30–60 минут</strong>.</li>
-          </ul>
-          <div class="document-links" style="margin-top: 14px;">
-            <a class="document-link"
-               href="https://discord.com/channels/1514608098621526096/1515389306951172256"
-               target="_blank" rel="noopener">
-              <span>Канал заявлений на увольнение</span>
-              <span class="arrow">↗</span>
-            </a>
-          </div>
-        </article>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        <!-- ВЫГОВОРЫ -->
-        <article class="document-card">
-          <div class="card-top">
-            <span class="card-number">INFO / 03</span>
-            <span class="card-tag required">Дисциплина</span>
-          </div>
-          <h3>Выговоры: проверка и снятие</h3>
-          <ul class="memo-list">
-            <li><strong>Как проверить:</strong> откройте планшет, найдите себя по имени/фамилии или Static ID и нажмите на свой профиль — там отображается вся кадровая история и активные выговоры.</li>
-            <li><strong>Расшифровка:</strong> <span class="code-inline">НВС</span> — неявка в строй. Выговоры выдаются строго согласно уставу.</li>
-            <li>Вся информация по отработкам и обжалованию находится в Discord.</li>
-          </ul>
-          <div class="document-links" style="margin-top: 14px;">
-            <a class="document-link"
-               href="https://discord.com/channels/1514608098621526096/1514953237495549953"
-               target="_blank" rel="noopener">
-              <span>Отработка и обжалование выговоров</span>
-              <span class="arrow">↗</span>
-            </a>
-          </div>
-        </article>
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 78% 0%, rgba(117, 133, 83, .13), transparent 34rem),
+        radial-gradient(ellipse at 0% 55%, rgba(181, 147, 79, .055), transparent 32rem),
+        var(--bg);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11, 16, 12, .88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(var(--max), calc(100% - 44px));
+      min-height: 78px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(197, 166, 101, .55);
+      color: var(--gold-bright);
+      font-size: 20px;
+      transform: rotate(45deg);
+      border-radius: 8px;
+    }
+
+    .brand-mark span {
+      transform: rotate(-45deg);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font: 800 25px/1 "Barlow Condensed", sans-serif;
+      letter-spacing: .13em;
+    }
+
+    .brand-copy small {
+      display: block;
+      margin-top: 5px;
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .24em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link {
+      color: #aeb4a8;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 12px;
+      border-radius: 7px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      transition: .2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold-bright);
+      background: rgba(197, 166, 101, .09);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--gold-bright);
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    /* CONTAINER & HERO */
+    .container {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
+      padding-bottom: 70px;
+    }
+
+    .hero {
+      padding: 64px 0 28px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      margin: 14px 0 12px;
+      font: 700 clamp(42px, 5.5vw, 64px)/1 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .hero h1 span {
+      color: var(--gold-bright);
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: #b8beb1;
+      font-size: 14.5px;
+      max-width: 660px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: rgba(18, 26, 19, .85);
+      color: #cfd4c8;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    a.meta-chip:hover {
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      background: rgba(197, 166, 101, .11);
+    }
+
+    .meta-chip b {
+      color: var(--gold-bright);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 15px;
+      letter-spacing: .06em;
+    }
+
+    /* MEMO CARDS GRID */
+    .memo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .memo-card {
+      scroll-margin-top: 96px;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .memo-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(197, 166, 101, .48);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .card-number {
+      color: #8f9a84;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    .card-tag {
+      padding: 3px 9px;
+      border: 1px solid rgba(120, 139, 98, .45);
+      border-radius: 5px;
+      background: rgba(120, 139, 98, .12);
+      color: #c7d9b2;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .card-tag.warn {
+      border-color: rgba(196, 124, 104, .45);
+      background: rgba(196, 124, 104, .12);
+      color: #eab3a4;
+    }
+
+    .memo-card h2 {
+      margin: 0 0 12px;
+      font: 700 28px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      color: var(--text);
+    }
+
+    .memo-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    .memo-list li + li {
+      margin-top: 8px;
+    }
+
+    .sub-heading {
+      margin: 14px 0 6px;
+      color: var(--gold-bright);
+      font: 700 18px/1.2 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+    }
+
+    .code-inline {
+      display: inline-block;
+      padding: 1px 7px;
+      border: 1px solid rgba(197, 166, 101, .28);
+      border-radius: 5px;
+      background: rgba(11, 16, 12, .7);
+      color: var(--gold-bright);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11.5px;
+    }
+
+    .mini-alert {
+      margin-top: 14px;
+      padding: 10px 13px;
+      border: 1px solid rgba(196, 124, 104, .35);
+      border-left: 3px solid var(--red);
+      border-radius: 7px;
+      background: rgba(196, 124, 104, .1);
+      color: #ebd0c8;
+      font-size: 12.5px;
+    }
+
+    .mini-alert strong {
+      color: #f3b8a8;
+    }
+
+    .card-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .discord-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 13px;
+      border: 1px solid rgba(197, 166, 101, .24);
+      border-radius: 8px;
+      background: rgba(197, 166, 101, .06);
+      color: #e6e8df;
+      font-size: 12.5px;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .discord-link:hover {
+      background: rgba(197, 166, 101, .16);
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      transform: translateX(3px);
+    }
+
+    .discord-link.disabled {
+      opacity: .68;
+      cursor: default;
+      pointer-events: none;
+      border-style: dashed;
+    }
+
+    .discord-link .arrow {
+      color: var(--gold);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* MP PANEL */
+    .mp-panel {
+      scroll-margin-top: 96px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
+    }
+
+    .mp-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .mp-header h2 {
+      margin: 6px 0 0;
+      font: 700 30px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      color: var(--text);
+    }
+
+    .mp-general {
+      margin: 0 0 22px;
+      padding: 16px 20px;
+      border: 1px solid rgba(197, 166, 101, .28);
+      border-left: 3px solid var(--gold);
+      border-radius: 9px;
+      background: rgba(197, 166, 101, .07);
+    }
+
+    .mp-general strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold-bright);
+      font: 700 18px/1.2 "Barlow Condensed", sans-serif;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .mp-general ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #dfe4d6;
+      font-size: 13px;
+    }
+
+    .mp-general li + li {
+      margin-top: 4px;
+    }
+
+    .mp-subhead {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .mp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .mp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 20px;
+      border: 1px solid rgba(190, 164, 102, .15);
+      border-radius: 10px;
+      background: rgba(11, 16, 12, .45);
+      transition: border-color .2s ease;
+    }
+
+    .mp-item:hover {
+      border-color: rgba(197, 166, 101, .38);
+    }
+
+    .mp-num {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(197, 166, 101, .42);
+      border-radius: 7px;
+      background: rgba(197, 166, 101, .09);
+      color: var(--gold-bright);
+      font: 700 16px "Barlow Condensed", sans-serif;
+    }
+
+    .mp-item h3 {
+      margin: 0 0 6px;
+      font: 700 20px/1.2 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      color: var(--gold-bright);
+    }
+
+    .mp-item p {
+      margin: 0;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: rgba(5, 9, 6, .48);
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 44px));
+      min-height: 94px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font: 700 23px "Barlow Condensed", sans-serif;
+      letter-spacing: .1em;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+      font: 600 9px "Manrope", sans-serif;
+      letter-spacing: .14em;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: #8e9788;
+      font-size: 9px;
+      letter-spacing: .16em;
+    }
+
+    .copyright {
+      text-align: right;
+      letter-spacing: .04em !important;
+    }
+
+    /* BACK TO TOP */
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(197, 166, 101, .45);
+      border-radius: 8px;
+      color: var(--gold-bright);
+      background: #182019;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: .2s;
+    }
+
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .main-nav {
+        gap: 0;
+      }
+      .nav-link {
+        padding: 9px 8px;
+        font-size: 11px;
+      }
+      .header-inner {
+        gap: 15px;
+      }
+      .memo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .header-inner {
+        min-height: 70px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 69px;
+        left: 0;
+        right: 0;
+        padding: 12px 22px 18px;
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(11, 16, 12, .98);
+        border-bottom: 1px solid var(--line);
+      }
+      .main-nav.open {
+        display: flex;
+      }
+      .nav-link {
+        padding: 12px;
+        font-size: 12px;
+      }
+      .mp-grid {
+        grid-template-columns: 1fr;
+      }
+      .mp-panel {
+        padding: 20px;
+      }
+      .footer-inner {
+        padding: 22px 0;
+        flex-wrap: wrap;
+      }
+      .copyright {
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container,
+      .header-inner,
+      .footer-inner {
+        width: min(100% - 30px, var(--max));
+      }
+      .memo-card {
+        padding: 20px;
+      }
+      .mp-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-inner p {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
+        <span class="brand-mark"><span>✦</span></span>
+        <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="academy.html">Правила</a>
+        <a class="nav-link" href="leadership.html">Руководство</a>
+        <a class="nav-link" href="rules.html">Подразделения</a>
+        <a class="nav-link" href="promotions.html">Повышения</a>
+        <a class="nav-link" href="exams.html">Экзамены</a>
+        <a class="nav-link active" href="materials.html">Материалы</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- INTRO -->
+    <section class="hero">
+      <div class="eyebrow">San Andreas National Guard</div>
+      <h1>Памятка <span>бойца</span></h1>
+      <p class="subtitle">
+        Порядок получения военного билета, увольнения со службы, проверки и снятия выговоров, а также требования к скриншотам с мероприятий.
+      </p>
+      <div class="hero-meta">
+        <a class="meta-chip" href="#sec-vb"><b>01</b> Военный билет</a>
+        <a class="meta-chip" href="#sec-dismiss"><b>02</b> Увольнение</a>
+        <a class="meta-chip" href="#sec-reprimand"><b>03</b> Выговоры</a>
+        <a class="meta-chip" href="#sec-mp"><b>04</b> Список МП и скриншоты</a>
       </div>
+    </section>
 
-      <!-- МЕРОПРИЯТИЯ И ТРЕБОВАНИЯ К СКРИНШОТАМ -->
-      <article class="mp-panel">
-        <div class="mp-header">
-          <div>
-            <span class="card-number">EVENTS & SCREENSHOTS</span>
-            <h3>Список мероприятий (МП) и требования к скриншотам</h3>
-          </div>
-          <div class="mp-rules-badges">
-            <span class="meta-chip"><b>HUD</b> Полноэкранный скриншот</span>
-            <span class="meta-chip"><b>CAM</b> Включённая боди-камера</span>
-            <span class="meta-chip"><b>MIN 2</b> Скриншота с каждого МП</span>
-          </div>
+    <!-- 3 КАРТОЧКИ: ВБ / УВОЛЬНЕНИЕ / ВЫГОВОРЫ -->
+    <section class="memo-grid" aria-label="Основные разделы памятки">
+      <!-- ВОЕННЫЙ БИЛЕТ -->
+      <article class="memo-card" id="sec-vb">
+        <div class="card-top">
+          <span class="card-number">MEMO / 01</span>
+          <span class="card-tag">С 7 ранга</span>
         </div>
+        <h2>Как получить военный билет</h2>
+        <ul class="memo-list">
+          <li>После прохождения Академии военный билет выдаётся только при повышении на <strong>7 ранг</strong>.</li>
+          <li>При повышении на 7 ранг выполните задания и оставьте запрос на военный билет.</li>
+          <li>Дождитесь одобрения запроса, после чего обратитесь за выдачей к одобрившему сотруднику или к любому человеку с соответствующей ролью.</li>
+        </ul>
+        <div class="mini-alert">
+          <strong>Важно:</strong> при активном выговоре военный билет не выдаётся.
+        </div>
+        <div class="card-links">
+          <span class="discord-link disabled">
+            <span>Запрос на военный билет (ссылка будет позже)</span>
+            <span class="arrow">⏳</span>
+          </span>
+        </div>
+      </article>
 
-        <p class="mp-warning">
-          Без включённой боди-камеры и полноэкранного формата отчёт автоматически отклоняется.
-        </p>
+      <!-- УВОЛЬНЕНИЕ -->
+      <article class="memo-card" id="sec-dismiss">
+        <div class="card-top">
+          <span class="card-number">MEMO / 02</span>
+          <span class="card-tag">Кадры</span>
+        </div>
+        <h2>Как уволиться</h2>
+        <ul class="memo-list">
+          <li>Оставьте заявление в соответствующем канале Discord.</li>
+          <li>Укажите ваш отдел (если вас не перевели или вы не прошли академию — укажите <strong>Академия</strong>).</li>
+          <li>Приложите скриншот планшета с вашим профилем в SANG: <span class="code-inline">Планшет (стрелка вниз) → SANG → Коллеги → поиск по нику → нажмите на своё имя</span>.</li>
+          <li>После подачи заявления ожидайте (рапорты проверяются в среднем раз в <strong>30–60 минут</strong>).</li>
+        </ul>
+        <div class="card-links">
+          <a class="discord-link"
+             href="https://discord.com/channels/1514608098621526096/1515389306951172256"
+             target="_blank" rel="noopener">
+            <span>Канал заявлений на увольнение</span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </article>
 
-        <div class="mp-grid">
-          <div class="mp-item">
-            <span class="mp-num">01</span>
-            <div>
-              <h4>Поставка (включая крафты: меды, техи, оружейки)</h4>
-              <p>На скриншоте должен быть ящик в руках, колонна с «Матовозкой» или вертолёт (обязательно видно наличие группы). Чтобы поставки засчитались как разные, интервал между скриншотами должен быть не менее <strong>20–30 минут</strong>.</p>
-            </div>
-          </div>
-
-          <div class="mp-item">
-            <span class="mp-num">02</span>
-            <div>
-              <h4>Отбитие ФЗ / Острова и Дроп</h4>
-              <p>Скриншоты с метками группы на карте, построением (если собирал старший состав) или моментом смерти после отбития.</p>
-            </div>
-          </div>
-
-          <div class="mp-item">
-            <span class="mp-num">03</span>
-            <div>
-              <h4>Патруль от старшего состава (от 10 минут)</h4>
-              <p>Минимум 2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span>: <em>«Начал(а) патруль»</em> и <em>«Закончил(а) патруль»</em>.</p>
-            </div>
-          </div>
-
-          <div class="mp-item">
-            <span class="mp-num">04</span>
-            <div>
-              <h4>Тренировка от старшего состава (от 15 минут)</h4>
-              <p>Минимум 2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span>: <em>«Начал(а) тренировку»</em> и <em>«Закончил(а) тренировку»</em>.</p>
-            </div>
-          </div>
+      <!-- ВЫГОВОРЫ -->
+      <article class="memo-card" id="sec-reprimand">
+        <div class="card-top">
+          <span class="card-number">MEMO / 03</span>
+          <span class="card-tag warn">Дисциплина</span>
+        </div>
+        <h2>Как узнать, есть ли выговор</h2>
+        <ul class="memo-list">
+          <li>Откройте планшет, найдите себя по имени/фамилии или Static ID и нажмите на свой профиль — там отображается вся кадровая история и активные выговоры.</li>
+          <li><span class="code-inline">НВС</span> — неявка в строй. Выговоры выдаются согласно уставу.</li>
+        </ul>
+        <h3 class="sub-heading">Как снять или обжаловать выговор</h3>
+        <ul class="memo-list">
+          <li>Вся информация по отработкам и обжалованию находится в канале Discord.</li>
+        </ul>
+        <div class="card-links">
+          <a class="discord-link"
+             href="https://discord.com/channels/1514608098621526096/1514953237495549953"
+             target="_blank" rel="noopener">
+            <span>Отработка и обжалование выговоров</span>
+            <span class="arrow">↗</span>
+          </a>
         </div>
       </article>
     </section>
+
+    <!-- СПИСОК МП И ТРЕБОВАНИЯ К СКРИНШОТАМ -->
+    <section class="mp-panel" id="sec-mp" aria-labelledby="mp-title">
+      <div class="mp-header">
+        <div>
+          <span class="card-number">MEMO / 04 · EVENTS & SCREENSHOTS</span>
+          <h2 id="mp-title">Список мероприятий (МП) и требования к скриншотам</h2>
+        </div>
+      </div>
+
+      <div class="mp-general">
+        <strong>Общие правила для всех МП:</strong>
+        <ul>
+          <li>Полноэкранные скриншоты с включённой боди-камерой (без неё отчёт отклоняется).</li>
+          <li>Минимум 2 скриншота с каждого мероприятия.</li>
+        </ul>
+      </div>
+
+      <p class="mp-subhead">Виды МП и условия зачёта</p>
+
+      <div class="mp-grid">
+        <div class="mp-item">
+          <span class="mp-num">01</span>
+          <div>
+            <h3>Поставка (включая крафты: меды, техи, оружейки)</h3>
+            <p>На скриншоте должен быть ящик в руках, колонна с «Матовозкой» или вертолёт (обязательно видно наличие группы). Чтобы поставки засчитались как разные, интервал между скриншотами должен быть не менее <strong>20–30 минут</strong>.</p>
+          </div>
+        </div>
+
+        <div class="mp-item">
+          <span class="mp-num">02</span>
+          <div>
+            <h3>Отбитие ФЗ / Острова и Дроп</h3>
+            <p>Скриншоты с метками группы, построением (если собирал старший состав) или моментом смерти после отбития.</p>
+          </div>
+        </div>
+
+        <div class="mp-item">
+          <span class="mp-num">03</span>
+          <div>
+            <h3>Патруль от старшего состава (от 10 минут)</h3>
+            <p>2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span>: «Начал(а) патруль» и «Закончил(а) патруль».</p>
+          </div>
+        </div>
+
+        <div class="mp-item">
+          <span class="mp-num">04</span>
+          <div>
+            <h3>Тренировка от старшего состава (от 15 минут)</h3>
+            <p>2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span>: «Начал(а) тренировку» и «Закончил(а) тренировку».</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
+      <p>MAJESTIC · MEMPHIS · SANG</p>
+      <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTop.classList.toggle("visible", window.scrollY > 350);
+    });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

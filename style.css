@@ -23,7 +23,7 @@ a { color: inherit; text-decoration: none; }
 .nav-link { padding: 11px 10px; color: #b5beb1; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: .2s; }
 .nav-link:hover, .nav-link.active { color: var(--gold-light); background: rgba(197,166,106,.08); }
 .menu-toggle { display: none; background: transparent; color: var(--gold); border: 1px solid var(--line); padding: 8px 12px; font-size: 20px; cursor: pointer; }
-.hero { min-height: 610px; position: relative; display: flex; align-items: center; padding: 90px max(8vw, calc((100vw - var(--max))/2)); overflow: hidden; background:background: #18231a url("./images/actual_1438093415.jpg") center 45%/cover no-repeat; }
+.hero { min-height: 610px; position: relative; display: flex; align-items: center; padding: 90px max(8vw, calc((100vw - var(--max))/2)); overflow: hidden; background:background: #18231a url("https://raw.githubusercontent.com/asssechka/sang-military-academy/main/images/actual_1438093415.jpg") center 45%/cover no-repeat; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,14,9,.97) 0%, rgba(8,14,9,.79) 52%, rgba(8,14,9,.3) 100%), linear-gradient(0deg, rgba(8,14,9,.55), transparent 55%); }
 .hero-content { position: relative; max-width: 760px; }
 .eyebrow { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }

@@ -5,12 +5,12 @@
 ## Страницы
 
 - `index.html` — главная.
-- `academy.html` — академия.
+- `academy.html` — правила.
 - `leadership.html` — руководство.
-- `rules.html` — правила.
-- `promotions.html` — повышения.
+- `rules.html` — подразделения.
+- `promotions.html` — система повышения.
 - `exams.html` — экзамены и присяги.
-- `materials.html` — учебные материалы с поиском.
+- `materials.html` — устав и законопроекты.
 
 Общие файлы:
 - `style.css` — единое оформление и мобильная адаптация.

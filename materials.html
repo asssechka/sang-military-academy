@@ -643,15 +643,31 @@
       ☰
     </button>
 
-    <nav class="main-nav" id="mainNav" aria-label="Главная навигация">
-      <a class="nav-link" href="index.html">Главная</a>
-      <a class="nav-link active" href="academy.html" aria-current="page">Правила</a>
-      <a class="nav-link" href="leadership.html">Руководство</a>
-      <a class="nav-link" href="rules.html">Подразделения</a>
-      <a class="nav-link" href="promotions.html">Повышения</a>
-      <a class="nav-link" href="exams.html">Экзамены</a>
-      <a class="nav-link" href="materials.html">Материалы</a>
-    </nav>
+    <nav class="main-nav" id="mainNav">
+  <a class="nav-link" href="index.html">Главная</a>
+  <a class="nav-link" href="academy.html">Правила</a>
+  <a class="nav-link" href="leadership.html">Руководство</a>
+  <a class="nav-link" href="rules.html">Подразделения</a>
+  <a class="nav-link" href="promotions.html">Повышения</a>
+  <a class="nav-link" href="exams.html">Экзамены</a>
+  <a class="nav-link" href="materials.html">Материалы</a>
+</nav>
+
+<script>
+  const currentPage = window.location.pathname
+    .split("/")
+    .pop() || "index.html";
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
 
   </div>
 </header>

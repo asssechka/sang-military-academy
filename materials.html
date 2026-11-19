@@ -3,53 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111810">
-  <meta name="description" content="Информационный портал Military Academy — San Andreas National Guard.">
-  <title>Материалы | SANG Military Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>Памятка | SANG Military Academy</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
-      <span class="brand-mark">✦</span>
-      <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
-    <nav class="main-nav" id="mainNav" aria-label="Главная навигация">
-      <a class="nav-link" href="index.html">Главная</a>
-<a class="nav-link" href="academy.html">Академия</a>
-<a class="nav-link" href="leadership.html">Руководство</a>
-<a class="nav-link" href="rules.html">Правила</a>
-<a class="nav-link" href="promotions.html">Повышения</a>
-<a class="nav-link" href="exams.html">Экзамены</a>
-<a class="nav-link active" href="materials.html" aria-current="page">Материалы</a>
-    </nav>
-  </header>
-  <main>
-    <section class="content-section page-section" id="materials">
-      <div class="page-banner"><p class="eyebrow">KNOWLEDGE BASE</p><h2>Учебные материалы</h2><p>Поиск по основным темам академии.</p></div>
-      <div class="section-wrap narrow">
-        <label class="search-label" for="materialSearch">Найти материал</label>
-        <input class="search-input" id="materialSearch" type="search" placeholder="Например: устав, звания, присяга...">
-        <div class="material-list" id="materialList">
-          <article class="material-item"><span>01 / RULES</span><h3>Устав SANG</h3><p>Добавьте ссылку на актуальный устав и основные положения.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
-          <article class="material-item"><span>02 / STRUCTURE</span><h3>Структура и звания</h3><p>Список подразделений, должностей и воинских званий.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
-          <article class="material-item"><span>03 / EXAMS</span><h3>Подготовка к экзаменам</h3><p>Вопросы, темы и требования для успешной сдачи.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
-          <article class="material-item"><span>04 / OATH</span><h3>Порядок принятия присяги</h3><p>Этапы проведения и необходимые требования.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">✦</span>
+    <span class="brand-copy">
+      <strong>SANG</strong>
+      <small>MILITARY ACADEMY</small>
+    </span>
+  </a>
+  <nav class="main-nav">
+    <a class="nav-link" href="index.html">Главная</a>
+    <a class="nav-link" href="academy.html">Академия</a>
+    <a class="nav-link" href="leadership.html">Руководство</a>
+    <a class="nav-link" href="departments.html">Подразделения</a>
+    <a class="nav-link" href="rules.html">Правила</a>
+    <a class="nav-link" href="promotions.html">Повышения</a>
+    <a class="nav-link" href="exams.html">Экзамены</a>
+    <a class="nav-link" href="materials.html">Материалы</a>
+    <a class="nav-link" href="memo.html" aria-current="page">Памятка</a>
+  </nav>
+</header>
+<main class="memo-page">
+  <section class="memo-hero">
+    <p class="eyebrow">SAN ANDREAS NATIONAL GUARD</p>
+    <h1>ПАМЯТКА <span>SANG</span></h1>
+    <p>
+      Здесь собраны основные документы, необходимые для службы
+      в рядах Национальной гвардии.
+    </p>
+  </section>
+  <section class="memo-content">
+    <div class="memo-notice">
+      <strong>Важно!</strong>
+      <p>
+        Не нужно заучивать все документы наизусть.
+        Используйте ссылки ниже, чтобы при необходимости
+        открыть нужный текст и ознакомиться с ним.
+      </p>
+    </div>
+    <section class="memo-section">
+      <div class="memo-section-heading">
+        <span class="memo-number">01</span>
+        <div>
+          <h2>Устав SANG</h2>
+          <p>Внутренний документ Национальной гвардии</p>
         </div>
-        <p class="empty-state" id="emptyState" hidden>По вашему запросу ничего не найдено.</p>
+      </div>
+      <div class="memo-charter">
+        <span class="memo-tag">ОБЯЗАТЕЛЬНО К ИЗУЧЕНИЮ</span>
+        <h3>Устав SANG</h3>
+        <p>
+          Это наш внутренний устав. Его необходимо знать
+          слово в слово, без изменений и сокращений.
+        </p>
+        <!-- Добавить ссылку на Устав SANG, когда будет предоставлен адрес -->
+        <span class="memo-link-pending">
+          Ссылка на внутренний устав будет добавлена
+        </span>
       </div>
     </section>
-  </main>
-  <footer class="site-footer">
-    <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
-    <p>DISCIPLINE · HONOR · DUTY</p>
-    <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
-  </footer>
-  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
-  <script src="script.js"></script>
+    <section class="memo-section">
+      <div class="memo-section-heading">
+        <span class="memo-number">02</span>
+        <div>
+          <h2>Законодательство</h2>
+          <p>Нормативно-правовые документы штата San Andreas</p>
+        </div>
+      </div>
+      <div class="memo-links">
+        <a href="https://forum.majestic-rp.ru/threads/ugolovnyi-kodeks-shtata-san-andreas.3607892/" target="_blank" rel="noopener noreferrer">
+          <span>Уголовный кодекс</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/kodeks-ob-administrativnykh-pravonarusheniyakh-shtata-san-andreas.3505180/" target="_blank" rel="noopener noreferrer">
+          <span>Административный кодекс</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/protsessual-nyi-kodeks-shtata-san-andreas.3607902/" target="_blank" rel="noopener noreferrer">
+          <span>Процессуальный кодекс</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/dorozhnyi-kodeks-shtata-san-andreas.3505137/" target="_blank" rel="noopener noreferrer">
+          <span>Дорожный кодекс</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/zakon-o-zakrytykh-i-okhranyayemykh-territoriyakh-shtata-san-andreas.3505149/" target="_blank" rel="noopener noreferrer">
+          <span>Закон о закрытых и охраняемых территориях</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/zakon-o-natsional-noi-gvardii-shtata-san-andreas.3505255/" target="_blank" rel="noopener noreferrer">
+          <span>Закон о Национальной гвардии</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/trudovoi-kodeks-shtata-san-andreas.3505177/" target="_blank" rel="noopener noreferrer">
+          <span>Трудовой кодекс</span><b>↗</b>
+        </a>
+      </div>
+    </section>
+    <section class="memo-section">
+      <div class="memo-section-heading">
+        <span class="memo-number">03</span>
+        <div>
+          <h2>Правила проекта</h2>
+          <p>Правила взаимодействия и проведения мероприятий</p>
+        </div>
+      </div>
+      <div class="memo-links">
+        <a href="https://forum.majestic-rp.ru/forums/general-server-rules/" target="_blank" rel="noopener noreferrer">
+          <span>Основные правила проекта</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-gosudarstvennykh-organizatsii.8672/" target="_blank" rel="noopener noreferrer">
+          <span>Правила государственных организаций</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-kriminal-nykh-organizatsii.3977/" target="_blank" rel="noopener noreferrer">
+          <span>Правила криминальных организаций</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-perekhvata-postavok.123972/" target="_blank" rel="noopener noreferrer">
+          <span>Перехват поставок</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-voiny-za-airdrop.210836/" target="_blank" rel="noopener noreferrer">
+          <span>Война за AirDrop</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-ograblenii-i-pokhishchenii.8254/" target="_blank" rel="noopener noreferrer">
+          <span>Ограбления и похищения</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-territorii-forta-zankudo.8115/" target="_blank" rel="noopener noreferrer">
+          <span>Оборона Форта-Занкудо</span><b>↗</b>
+        </a>
+        <a href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-ostrova-kaio-periko.645651/" target="_blank" rel="noopener noreferrer">
+          <span>Оборона Кайо-Перико</span><b>↗</b>
+        </a>
+      </div>
+    </section>
+    <div class="memo-footer-note">
+      <strong>Помни:</strong>
+      <p>
+        Знание внутреннего устава SANG обязательно.
+        Остальные документы используй как справочник,
+        когда необходимо уточнить конкретное положение.
+      </p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <a class="footer-brand" href="index.html">
+    SANG <span>/ MILITARY ACADEMY</span>
+  </a>
+  <p>DISCIPLINE · HONOR · DUTY</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>

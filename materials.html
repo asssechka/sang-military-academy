@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111810">
+  <meta name="description" content="Информационный портал Military Academy — San Andreas National Guard.">
+  <title>Материалы | SANG Military Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
+      <span class="brand-mark">✦</span>
+      <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Главная навигация">
+      <a class="nav-link" href="index.html">Главная</a>
+<a class="nav-link" href="academy.html">Академия</a>
+<a class="nav-link" href="leadership.html">Руководство</a>
+<a class="nav-link" href="rules.html">Правила</a>
+<a class="nav-link" href="promotions.html">Повышения</a>
+<a class="nav-link" href="exams.html">Экзамены</a>
+<a class="nav-link active" href="materials.html" aria-current="page">Материалы</a>
+    </nav>
+  </header>
+  <main>
+    <section class="content-section page-section" id="materials">
+      <div class="page-banner"><p class="eyebrow">KNOWLEDGE BASE</p><h2>Учебные материалы</h2><p>Поиск по основным темам академии.</p></div>
+      <div class="section-wrap narrow">
+        <label class="search-label" for="materialSearch">Найти материал</label>
+        <input class="search-input" id="materialSearch" type="search" placeholder="Например: устав, звания, присяга...">
+        <div class="material-list" id="materialList">
+          <article class="material-item"><span>01 / RULES</span><h3>Устав SANG</h3><p>Добавьте ссылку на актуальный устав и основные положения.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
+          <article class="material-item"><span>02 / STRUCTURE</span><h3>Структура и звания</h3><p>Список подразделений, должностей и воинских званий.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
+          <article class="material-item"><span>03 / EXAMS</span><h3>Подготовка к экзаменам</h3><p>Вопросы, темы и требования для успешной сдачи.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
+          <article class="material-item"><span>04 / OATH</span><h3>Порядок принятия присяги</h3><p>Этапы проведения и необходимые требования.</p><a href="#" class="material-link placeholder-link">Ссылка будет добавлена</a></article>
+        </div>
+        <p class="empty-state" id="emptyState" hidden>По вашему запросу ничего не найдено.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
+    <p>DISCIPLINE · HONOR · DUTY</p>
+    <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
+  </footer>
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

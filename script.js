@@ -1,51 +1,50 @@
-// Навигация по разделам, мобильное меню и поиск по материалам.
+// Общая логика для всех отдельных страниц SANG Military Academy.
 const nav = document.getElementById('mainNav');
 const menuToggle = document.getElementById('menuToggle');
-const navLinks = [...document.querySelectorAll('.nav-link')];
 const toTop = document.getElementById('toTop');
+const search = document.getElementById('materialSearch');
 
-function updateActiveLink() {
-  const current = window.location.hash || '#home';
-  navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === current));
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+  });
 }
 
-menuToggle.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-});
-
-navLinks.forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-}));
-
-window.addEventListener('hashchange', updateActiveLink);
-window.addEventListener('load', updateActiveLink);
-
-window.addEventListener('scroll', () => {
-  toTop.classList.toggle('visible', window.scrollY > 450);
-});
-toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-const search = document.getElementById('materialSearch');
-const materialItems = [...document.querySelectorAll('.material-item')];
-const emptyState = document.getElementById('emptyState');
-
-search.addEventListener('input', () => {
-  const query = search.value.trim().toLocaleLowerCase('ru');
-  let visibleCount = 0;
-  materialItems.forEach(item => {
-    const match = item.textContent.toLocaleLowerCase('ru').includes(query);
-    item.hidden = !match;
-    if (match) visibleCount++;
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    nav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
   });
-  emptyState.hidden = visibleCount !== 0;
 });
 
-document.getElementById('year').textContent = new Date().getFullYear();
+if (toTop) {
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('visible', window.scrollY > 450);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
 
-// Ссылки-заглушки не должны уводить пользователя наверх страницы.
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
+
+// Поиск включается только на странице «Материалы».
+if (search) {
+  const items = [...document.querySelectorAll('.material-item')];
+  const emptyState = document.getElementById('emptyState');
+  search.addEventListener('input', () => {
+    const query = search.value.trim().toLocaleLowerCase('ru');
+    let visible = 0;
+    items.forEach(item => {
+      const matches = item.textContent.toLocaleLowerCase('ru').includes(query);
+      item.hidden = !matches;
+      if (matches) visible++;
+    });
+    if (emptyState) emptyState.hidden = visible !== 0;
+  });
+}
+
 document.querySelectorAll('.placeholder-link').forEach(link => {
   link.addEventListener('click', event => event.preventDefault());
 });

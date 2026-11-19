@@ -52,10 +52,7 @@ a { color: inherit; text-decoration: none; }
 .quote-band { padding: 54px 20px; text-align: center; background: #1a251b; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .quote-band p { font: 500 clamp(20px, 3vw, 30px) Oswald, sans-serif; letter-spacing: .5px; }
 .quote-band span { display: block; margin-top: 12px; color: var(--gold); font-size: 9px; letter-spacing: 3px; }
-.content-section { display: none; min-height: 65vh; }
-.content-section:target { display: block; }
-body:not(:has(.content-section:target)) #home { display: block; }
-body:has(.content-section:target) #home { display: none; }
+.content-section { display: block; min-height: 65vh; }
 .page-banner { padding: 64px max(5vw, calc((100vw - var(--max))/2)); background: linear-gradient(105deg, #1d2a1e, #111811 75%); border-bottom: 1px solid var(--line); }
 .page-banner h2 { margin-top: 8px; font-size: clamp(36px, 5vw, 54px); }
 .page-banner > p:last-child { margin-top: 8px; color: var(--muted); font-size: 14px; }

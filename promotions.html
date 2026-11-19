@@ -1,17 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101610">
-  <meta name="description" content="Памятка академика Military Academy — San Andreas National Guard.">
-  <title>Памятка SANG — Military Academy</title>
-
+  <meta name="description" content="Руководящий состав Military Academy — San Andreas National Guard.">
+  <title>Руководство | SANG Military Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #0b100c;
@@ -45,6 +42,13 @@
         var(--bg);
       font-family: "Manrope", sans-serif;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
     }
 
     a {
@@ -57,7 +61,6 @@
     }
 
     /* HEADER */
-
     .site-header {
       position: sticky;
       top: 0;
@@ -89,7 +92,7 @@
       height: 42px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(197,166,101,.55);
+      border: 1px solid rgba(197, 166, 101, .55);
       color: var(--gold-bright);
       font-size: 20px;
       transform: rotate(45deg);
@@ -127,13 +130,15 @@
       font-weight: 700;
       padding: 10px 12px;
       border-radius: 7px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
       transition: .2s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
       color: var(--gold-bright);
-      background: rgba(197,166,101,.09);
+      background: rgba(197, 166, 101, .09);
     }
 
     .menu-toggle {
@@ -146,22 +151,28 @@
       cursor: pointer;
     }
 
-    /* MAIN */
-
-    .container {
-      width: min(var(--max), calc(100% - 44px));
-      margin: auto;
+    /* PAGE & BANNERS */
+    .page-section {
+      padding-bottom: 70px;
     }
 
-    .hero {
-      padding: 76px 0 36px;
-      position: relative;
+    .page-banner {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 64px 0 20px;
+    }
+
+    .page-banner-inner {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
     }
 
     .eyebrow {
       display: flex;
       align-items: center;
       gap: 12px;
+      margin: 0;
       color: var(--gold);
       font-size: 10px;
       font-weight: 800;
@@ -176,265 +187,117 @@
       background: var(--gold);
     }
 
-    h1 {
-      margin: 16px 0 12px;
-      font: 700 clamp(42px, 6vw, 66px)/.98 "Barlow Condensed", sans-serif;
-      letter-spacing: .015em;
+    .page-banner h2 {
+      margin: 14px 0 10px;
+      font: 700 clamp(40px, 5.5vw, 62px)/1 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: var(--text);
     }
 
-    h1 span {
-      color: var(--gold-bright);
-    }
-
-    .subtitle {
-      max-width: 690px;
+    .page-banner p:last-child {
       margin: 0;
       color: #b8beb1;
       font-size: 14px;
+      max-width: 680px;
     }
 
-    .hero-meta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 27px;
+    .section-wrap {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 34px auto 0;
     }
 
-    .meta-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 11px;
-      color: #c3c9bb;
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      background: rgba(255,255,255,.02);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .meta-chip b {
-      color: var(--gold-bright);
-      font-size: 13px;
-    }
-
-    /* NOTICE */
-
-    .notice {
-      display: flex;
-      gap: 17px;
-      align-items: flex-start;
-      margin: 26px 0 58px;
-      padding: 21px 24px;
-      border: 1px solid rgba(197,166,101,.25);
-      border-left: 3px solid var(--gold);
-      border-radius: 9px;
-      background: linear-gradient(
-        100deg,
-        rgba(197,166,101,.10),
-        rgba(197,166,101,.025)
-      );
-    }
-
-    .notice-icon {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 34px;
-      border-radius: 8px;
-      color: var(--gold-bright);
-      background: rgba(197,166,101,.13);
-      font-size: 17px;
-    }
-
-    .notice strong {
+    .section-heading.left {
       display: block;
-      color: var(--gold-bright);
-      font: 600 19px "Barlow Condensed", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: .04em;
+      margin-bottom: 28px;
     }
 
-    .notice p {
-      margin: 4px 0 0;
-      color: #b7bcae;
-      font-size: 12px;
-    }
-
-    /* DOCUMENTS */
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 23px;
-      font: 600 30px "Barlow Condensed", sans-serif;
-      letter-spacing: .025em;
-    }
-
-    .section-heading span {
-      display: inline-grid;
-      place-items: center;
-      width: 43px;
-      height: 37px;
-      color: var(--gold-bright);
-      border: 1px solid rgba(197,166,101,.42);
-      border-radius: 6px;
-      font-size: 19px;
-      background: rgba(197,166,101,.07);
-    }
-
-    .documents {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 16px;
-    }
-
-    .document-card {
-      position: relative;
-      overflow: hidden;
-      padding: 25px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(
-        145deg,
-        rgba(24,34,25,.96),
-        rgba(16,23,17,.96)
-      );
-      transition:
-        transform .22s ease,
-        border-color .22s ease,
-        background .22s ease;
-    }
-
-    .document-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(197,166,101,.48);
-    }
-
-    .document-card:before {
-      content: "";
-      position: absolute;
-      right: -38px;
-      top: -52px;
-      width: 150px;
-      height: 150px;
-      border: 1px solid rgba(197,166,101,.08);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 18px rgba(197,166,101,.018),
-        0 0 0 38px rgba(197,166,101,.012);
-      pointer-events: none;
-    }
-
-    .document-card:first-child {
-      grid-column: 1 / -1;
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .card-number {
-      color: #8f9a84;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .19em;
-    }
-
-    .card-tag {
-      color: var(--gold-bright);
-      border: 1px solid rgba(197,166,101,.35);
-      background: rgba(197,166,101,.08);
-      padding: 4px 9px;
-      border-radius: 4px;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .09em;
+    .section-heading.left h2 {
+      margin: 0 0 8px;
+      font: 700 32px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
       text-transform: uppercase;
     }
 
-    .document-card h3 {
-      margin: 16px 0 7px;
-      font: 600 25px "Barlow Condensed", sans-serif;
-    }
-
-    .card-description {
-      max-width: 760px;
+    .section-heading.left p:last-child {
       margin: 0;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
+      max-width: 760px;
     }
 
-    .document-links {
+    /* LEADER CARDS */
+    .leader-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 8px;
-      margin-top: 21px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .document-link,
-    .missing-link {
+    .leader-card {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      min-height: 43px;
-      padding: 10px 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,.065);
-      background: rgba(255,255,255,.025);
-      color: #d1d5ca;
-      font-size: 11px;
-      font-weight: 600;
-      transition: .2s ease;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
+      transition: transform .22s ease, border-color .22s ease;
     }
 
-    .document-link:hover {
-      color: var(--gold-bright);
-      border-color: rgba(197,166,101,.35);
-      background: rgba(197,166,101,.07);
-      transform: translateX(2px);
+    .leader-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(197, 166, 101, .48);
     }
 
-    .arrow {
-      color: var(--gold);
-      font-size: 15px;
+    .leader-emblem {
+      width: 48px;
+      height: 48px;
       flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(197, 166, 101, .45);
+      border-radius: 10px;
+      background: rgba(197, 166, 101, .08);
+      color: var(--gold-bright);
+      font-size: 20px;
     }
 
-    .missing-link {
-      color: #899184;
-      border-style: dashed;
+    .leader-details {
+      min-width: 0;
     }
 
-    /* REMINDER */
-
-    .reminder {
-      margin: 22px 0 70px;
-      padding: 18px 21px;
-      border-radius: 8px;
-      border: 1px solid rgba(120,139,98,.28);
-      background: rgba(120,139,98,.08);
-      color: #c4cdb9;
-      font-size: 12px;
+    .leader-details .rank {
+      margin: 0 0 4px;
+      color: var(--gold);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
-    .reminder strong {
-      color: #d6e1c7;
+    .leader-details h3 {
+      margin: 0 0 6px;
+      font: 700 25px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      color: var(--text);
+    }
+
+    .leader-contact {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .leader-contact span {
+      color: var(--gold-bright);
+      font-weight: 600;
     }
 
     /* FOOTER */
-
     .site-footer {
       border-top: 1px solid var(--line);
-      background: rgba(5,9,6,.48);
+      background: rgba(5, 9, 6, .48);
     }
 
     .footer-inner {
@@ -471,7 +334,6 @@
     }
 
     /* BACK TO TOP */
-
     .to-top {
       position: fixed;
       right: 24px;
@@ -480,7 +342,7 @@
       height: 42px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(197,166,101,.45);
+      border: 1px solid rgba(197, 166, 101, .45);
       border-radius: 8px;
       color: var(--gold-bright);
       background: #182019;
@@ -498,19 +360,19 @@
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 980px) {
       .main-nav {
         gap: 0;
       }
-
       .nav-link {
         padding: 9px 8px;
         font-size: 11px;
       }
-
       .header-inner {
         gap: 15px;
+      }
+      .leader-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -518,11 +380,9 @@
       .header-inner {
         min-height: 70px;
       }
-
       .menu-toggle {
         display: block;
       }
-
       .main-nav {
         display: none;
         position: absolute;
@@ -532,36 +392,20 @@
         padding: 12px 22px 18px;
         flex-direction: column;
         align-items: stretch;
-        background: rgba(11,16,12,.98);
+        background: rgba(11, 16, 12, .98);
         border-bottom: 1px solid var(--line);
       }
-
       .main-nav.open {
         display: flex;
       }
-
       .nav-link {
         padding: 12px;
         font-size: 12px;
       }
-
-      .hero {
-        padding-top: 55px;
-      }
-
-      .documents {
-        grid-template-columns: 1fr;
-      }
-
-      .document-card:first-child {
-        grid-column: auto;
-      }
-
       .footer-inner {
         padding: 22px 0;
         flex-wrap: wrap;
       }
-
       .copyright {
         text-align: left;
         width: 100%;
@@ -569,90 +413,41 @@
     }
 
     @media (max-width: 560px) {
-      .container,
+      .page-banner-inner,
+      .section-wrap,
       .header-inner,
       .footer-inner {
         width: min(100% - 30px, var(--max));
       }
-
-      .hero {
-        padding-top: 43px;
-      }
-
-      h1 {
-        font-size: 48px;
-      }
-
-      .subtitle {
-        font-size: 12px;
-      }
-
-      .notice {
-        padding: 17px;
-        margin-bottom: 43px;
-      }
-
-      .section-heading {
-        font-size: 26px;
-      }
-
-      .document-card {
-        padding: 19px;
-      }
-
-      .document-links {
+      .leader-grid {
         grid-template-columns: 1fr;
       }
-
-      .document-card h3 {
-        font-size: 23px;
-      }
-
       .footer-inner p {
         width: 100%;
       }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *:before,
-      *:after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
   </style>
-</head>
-
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111810">
-  <meta name="description" content="Информационный портал Military Academy — San Andreas National Guard.">
-  <title>Повышения | SANG Military Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
-      <span class="brand-mark">✦</span>
-      <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
-    <nav class="main-nav" id="mainNav" aria-label="Главная навигация">
-      <a class="nav-link" href="index.html">Главная</a>
-      <a class="nav-link active" href="academy.html" aria-current="page">Правила</a>
-      <a class="nav-link" href="leadership.html">Руководство</a>
-      <a class="nav-link" href="rules.html">Подразделения</a>
-      <a class="nav-link" href="promotions.html">Повышения</a>
-      <a class="nav-link" href="exams.html">Экзамены</a>
-      <a class="nav-link" href="materials.html">Материалы</a>
-    </nav>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
+        <span class="brand-mark"><span>✦</span></span>
+        <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="academy.html">Правила</a>
+        <a class="nav-link active" href="leadership.html">Руководство</a>
+        <a class="nav-link" href="rules.html">Подразделения</a>
+        <a class="nav-link" href="promotions.html">Повышения</a>
+        <a class="nav-link" href="exams.html">Экзамены</a>
+        <a class="nav-link" href="materials.html">Материалы</a>
+      </nav>
+    </div>
   </header>
+
   <main>
     <section class="content-section page-section" id="promotions">
       <div class="page-banner"><p class="eyebrow">CAREER PROGRESSION</p><h2>Система повышений</h2><p>Что важно знать для дальнейшего продвижения по службе.</p></div>

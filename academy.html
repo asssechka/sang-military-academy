@@ -1,4 +1,18 @@
 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111810">
+  <meta name="description" content="Памятка академика Military Academy — San Andreas National Guard.">
+  <title>Академия | SANG Military Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -625,54 +639,6 @@
 </head>
 
 <body>
-
-<header class="site-header">
-  <div class="header-inner">
-
-    <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
-      <span class="brand-mark"><span>✦</span></span>
-
-      <span class="brand-copy">
-        <strong>SANG</strong>
-        <small>MILITARY ACADEMY</small>
-      </span>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Открыть меню" aria-expanded="false">
-      ☰
-    </button>
-
-    <nav class="main-nav" id="mainNav">
-  <a class="nav-link" href="index.html">Главная</a>
-  <a class="nav-link" href="academy.html">Правила</a>
-  <a class="nav-link" href="leadership.html">Руководство</a>
-  <a class="nav-link" href="rules.html">Подразделения</a>
-  <a class="nav-link" href="promotions.html">Повышения</a>
-  <a class="nav-link" href="exams.html">Экзамены</a>
-  <a class="nav-link" href="materials.html">Материалы</a>
-</nav>
-
-<script>
-  const currentPage = window.location.pathname
-    .split("/")
-    .pop() || "index.html";
-
-  document.querySelectorAll(".nav-link").forEach(link => {
-    const linkPage = link.getAttribute("href");
-
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-</script>
-
-  </div>
-</header>
-
-<body>
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
     <span class="brand-mark">✦</span>
@@ -940,81 +906,7 @@
     © <span id="year"></span> SANG Military Academy. Информационный портал.
   </p>
 </footer>
-
-<!-- BACK TO TOP -->
-
-<button class="to-top" id="toTop" aria-label="Наверх">
-  ↑
-</button>
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-  // Мобильное меню
-
-  const menuToggle = document.getElementById("menuToggle");
-  const mainNav = document.getElementById("mainNav");
-
-  menuToggle.addEventListener("click", () => {
-
-    const isOpen = mainNav.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Закрыть меню" : "Открыть меню"
-    );
-
-    menuToggle.textContent = isOpen ? "✕" : "☰";
-
-  });
-
-  // Закрытие меню после перехода
-
-  mainNav.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-      mainNav.classList.remove("open");
-
-      menuToggle.setAttribute("aria-expanded", "false");
-
-      menuToggle.textContent = "☰";
-
-    });
-
-  });
-
-  // Автоматический год в футере
-
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-  // Кнопка возврата наверх
-
-  const toTop = document.getElementById("toTop");
-
-  window.addEventListener("scroll", () => {
-
-    toTop.classList.toggle(
-      "visible",
-      window.scrollY > 350
-    );
-
-  });
-
-  toTop.addEventListener("click", () => {
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-  });
-
-</script>
-
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,52 +1,131 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111810">
-  <meta name="description" content="Информационный портал Military Academy — San Andreas National Guard.">
-  <title>Экзамены | SANG Military Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="SANG Military Academy — главная">
-      <span class="brand-mark">✦</span>
-      <span class="brand-copy"><strong>SANG</strong><small>MILITARY ACADEMY</small></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
-    <nav class="main-nav" id="mainNav" aria-label="Главная навигация">
-      <a class="nav-link" href="index.html">Главная</a>
-<a class="nav-link" href="academy.html">Академия</a>
-<a class="nav-link" href="leadership.html">Руководство</a>
-<a class="nav-link" href="rules.html">Правила</a>
-<a class="nav-link" href="promotions.html">Повышения</a>
-<a class="nav-link active" href="exams.html" aria-current="page">Экзамены</a>
-<a class="nav-link" href="materials.html">Материалы</a>
-    </nav>
-  </header>
-  <main>
-    <section class="content-section page-section" id="exams">
-      <div class="page-banner"><p class="eyebrow">KNOWLEDGE CHECK</p><h2>Экзамены и присяги</h2><p>Проверка знаний и готовности к службе.</p></div>
-      <div class="section-wrap narrow">
-        <div class="info-grid">
-          <article class="info-card"><span class="number">01</span><h3>Теоретическая часть</h3><p>Проверка знания устава, правил фракции, субординации и основных обязанностей военнослужащего.</p></article>
-          <article class="info-card"><span class="number">02</span><h3>Практическая часть</h3><p>Проверка умения применять полученные знания и выполнять поставленные задачи в игровых ситуациях.</p></article>
-          <article class="info-card"><span class="number">03</span><h3>Принятие присяги</h3><p>Официальная процедура, подтверждающая готовность новобранца соблюдать установленные нормы службы.</p></article>
-          <article class="info-card"><span class="number">04</span><h3>Подготовка</h3><p>Повторите учебные материалы и уточните у инструктора формат и критерии проверки.</p></article>
-        </div>
+<!-- SERVICE MEMO: ВБ / ВЫГОВОРЫ / МП -->
+    <section aria-labelledby="memo-title" style="margin-top: 48px;">
+      <h2 class="section-heading" id="memo-title">
+        <span>02</span>
+        Памятка бойца: ВБ, выговоры и МП
+      </h2>
+
+      <!-- СЕТКА ИЗ 3 КАРТОЧЕК: ВБ, УВОЛЬНЕНИЕ, ВЫГОВОРЫ -->
+      <div class="memo-grid">
+        <!-- ВОЕННЫЙ БИЛЕТ -->
+        <article class="document-card">
+          <div class="card-top">
+            <span class="card-number">INFO / 01</span>
+            <span class="card-tag">С 7 ранга</span>
+          </div>
+          <h3>Получение военного билета</h3>
+          <ul class="memo-list">
+            <li>После прохождения Академии военный билет выдаётся только при повышении на <strong>7 ранг</strong>.</li>
+            <li>Выполните задания при повышении на 7 ранг и оставьте запрос на военный билет.</li>
+            <li>Дождитесь одобрения запроса, после чего обратитесь за выдачей к одобрившему сотруднику или к любому человеку с соответствующей ролью.</li>
+          </ul>
+          <div class="mini-alert">
+            <strong>Важно:</strong> при активном выговоре военный билет не выдаётся.
+          </div>
+          <div class="document-links" style="margin-top: 14px;">
+            <span class="document-link disabled">
+              <span>Запрос на военный билет (ссылка будет позже)</span>
+              <span class="arrow">⏳</span>
+            </span>
+          </div>
+        </article>
+
+        <!-- УВОЛЬНЕНИЕ -->
+        <article class="document-card">
+          <div class="card-top">
+            <span class="card-number">INFO / 02</span>
+            <span class="card-tag">Кадры</span>
+          </div>
+          <h3>Как уволиться из SANG</h3>
+          <ul class="memo-list">
+            <li>Оставьте заявление в соответствующем канале Discord.</li>
+            <li>Укажите ваш отдел (если вас не перевели или вы не прошли академию — укажите <strong>Академия</strong>).</li>
+            <li>Приложите скриншот планшета с вашим профилем: <span class="code-inline">Планшет (↓) → SANG → Коллеги → поиск по нику → нажмите на своё имя</span>.</li>
+            <li>Ожидайте рассмотрения — рапорты проверяются в среднем раз в <strong>30–60 минут</strong>.</li>
+          </ul>
+          <div class="document-links" style="margin-top: 14px;">
+            <a class="document-link"
+               href="https://discord.com/channels/1514608098621526096/1515389306951172256"
+               target="_blank" rel="noopener">
+              <span>Канал заявлений на увольнение</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ВЫГОВОРЫ -->
+        <article class="document-card">
+          <div class="card-top">
+            <span class="card-number">INFO / 03</span>
+            <span class="card-tag required">Дисциплина</span>
+          </div>
+          <h3>Выговоры: проверка и снятие</h3>
+          <ul class="memo-list">
+            <li><strong>Как проверить:</strong> откройте планшет, найдите себя по имени/фамилии или Static ID и нажмите на свой профиль — там отображается вся кадровая история и активные выговоры.</li>
+            <li><strong>Расшифровка:</strong> <span class="code-inline">НВС</span> — неявка в строй. Выговоры выдаются строго согласно уставу.</li>
+            <li>Вся информация по отработкам и обжалованию находится в Discord.</li>
+          </ul>
+          <div class="document-links" style="margin-top: 14px;">
+            <a class="document-link"
+               href="https://discord.com/channels/1514608098621526096/1514953237495549953"
+               target="_blank" rel="noopener">
+              <span>Отработка и обжалование выговоров</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </article>
       </div>
+
+      <!-- МЕРОПРИЯТИЯ И ТРЕБОВАНИЯ К СКРИНШОТАМ -->
+      <article class="mp-panel">
+        <div class="mp-header">
+          <div>
+            <span class="card-number">EVENTS & SCREENSHOTS</span>
+            <h3>Список мероприятий (МП) и требования к скриншотам</h3>
+          </div>
+          <div class="mp-rules-badges">
+            <span class="meta-chip"><b>HUD</b> Полноэкранный скриншот</span>
+            <span class="meta-chip"><b>CAM</b> Включённая боди-камера</span>
+            <span class="meta-chip"><b>MIN 2</b> Скриншота с каждого МП</span>
+          </div>
+        </div>
+
+        <p class="mp-warning">
+          Без включённой боди-камеры и полноэкранного формата отчёт автоматически отклоняется.
+        </p>
+
+        <div class="mp-grid">
+          <div class="mp-item">
+            <span class="mp-num">01</span>
+            <div>
+              <h4>Поставка (включая крафты: меды, техи, оружейки)</h4>
+              <p>На скриншоте должен быть ящик в руках, колонна с «Матовозкой» или вертолёт (обязательно видно наличие группы). Чтобы поставки засчитались как разные, интервал между скриншотами должен быть не менее <strong>20–30 минут</strong>.</p>
+            </div>
+          </div>
+
+          <div class="mp-item">
+            <span class="mp-num">02</span>
+            <div>
+              <h4>Отбитие ФЗ / Острова и Дроп</h4>
+              <p>Скриншоты с метками группы на карте, построением (если собирал старший состав) или моментом смерти после отбития.</p>
+            </div>
+          </div>
+
+          <div class="mp-item">
+            <span class="mp-num">03</span>
+            <div>
+              <h4>Патруль от старшего состава (от 10 минут)</h4>
+              <p>Минимум 2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span>: <em>«Начал(а) патруль»</em> и <em>«Закончил(а) патруль»</em>.</p>
+            </div>
+          </div>
+
+          <div class="mp-item">
+            <span class="mp-num">04</span>
+            <div>
+              <h4>Тренировка от старшего состава (от 15 минут)</h4>
+              <p>Минимум 2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span>: <em>«Начал(а) тренировку»</em> и <em>«Закончил(а) тренировку»</em>.</p>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
-  </main>
-  <footer class="site-footer">
-    <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
-    <p>MAJESTIC · MEMPHIS · SANG</p>
-    <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
-  </footer>
-  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
-  <script src="script.js"></script>
-</body>
-</html>

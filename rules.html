@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101610">
-  <meta name="description" content="Руководящий состав Military Academy — San Andreas National Guard.">
-  <title>Руководство | SANG Military Academy</title>
+  <meta name="description" content="Подразделения San Andreas National Guard — SANG Military Academy.">
+  <title>Подразделения | SANG Military Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -204,94 +204,163 @@
 
     .section-wrap {
       width: min(var(--max), calc(100% - 44px));
-      margin: 34px auto 0;
+      margin: 28px auto 0;
     }
 
-    .section-heading.left {
-      display: block;
-      margin-bottom: 28px;
+    /* DIVISIONS INTRO */
+    .divisions-intro {
+      margin-bottom: 32px;
+      padding: 24px 28px;
+      border: 1px solid rgba(197, 166, 101, .28);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      background: linear-gradient(100deg, rgba(197, 166, 101, .09), rgba(18, 26, 19, .95));
     }
 
-    .section-heading.left h2 {
-      margin: 0 0 8px;
+    .divisions-intro h2 {
+      margin: 10px 0 8px;
       font: 700 32px/1.1 "Barlow Condensed", sans-serif;
       letter-spacing: .02em;
       text-transform: uppercase;
     }
 
-    .section-heading.left p:last-child {
+    .divisions-intro p:last-child {
       margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 760px;
+      color: #c5cabd;
+      font-size: 13.5px;
+      max-width: 780px;
     }
 
-    /* LEADER CARDS */
-    .leader-grid {
+    /* DIVISIONS GRID & CARDS */
+    .divisions-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    .leader-card {
-      position: relative;
+    .division-card {
       display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 24px;
+      flex-direction: column;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
       transition: transform .22s ease, border-color .22s ease;
     }
 
-    .leader-card:hover {
+    .division-card:hover {
       transform: translateY(-3px);
       border-color: rgba(197, 166, 101, .48);
     }
 
-    .leader-emblem {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
+    .division-photo {
+      position: relative;
+      height: 170px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(197, 166, 101, .14), transparent 60%),
+        linear-gradient(135deg, #162017 0%, #0d140e 100%);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .division-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .division-photo-placeholder {
       display: grid;
       place-items: center;
-      border: 1px solid rgba(197, 166, 101, .45);
-      border-radius: 10px;
-      background: rgba(197, 166, 101, .08);
-      color: var(--gold-bright);
-      font-size: 20px;
-    }
-
-    .leader-details {
-      min-width: 0;
-    }
-
-    .leader-details .rank {
-      margin: 0 0 4px;
-      color: var(--gold);
-      font-size: 10.5px;
-      font-weight: 800;
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      text-align: center;
+      font: 800 26px/1.1 "Barlow Condensed", sans-serif;
       letter-spacing: .16em;
+      color: rgba(226, 199, 131, .28);
       text-transform: uppercase;
+      user-select: none;
     }
 
-    .leader-details h3 {
-      margin: 0 0 6px;
-      font: 700 25px/1.1 "Barlow Condensed", sans-serif;
+    .division-photo img + .division-photo-placeholder {
+      display: none;
+    }
+
+    .division-content {
+      padding: 24px 26px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .division-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .division-number {
+      color: #8f9a84;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    .division-code {
+      padding: 3px 10px;
+      border: 1px solid rgba(197, 166, 101, .4);
+      border-radius: 5px;
+      background: rgba(197, 166, 101, .1);
+      color: var(--gold-bright);
+      font: 700 12px "Barlow Condensed", sans-serif;
+      letter-spacing: .12em;
+    }
+
+    .division-title {
+      margin: 0 0 4px;
+      font: 700 28px/1.1 "Barlow Condensed", sans-serif;
       letter-spacing: .02em;
       color: var(--text);
     }
 
-    .leader-contact {
+    .division-fullname {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .division-description {
+      margin: 0 0 16px;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    .division-content h4 {
+      margin: auto 0 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--gold-bright);
+      font: 700 12px/1.3 "Manrope", sans-serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .division-content ul {
       margin: 0;
-      color: var(--muted);
+      padding-left: 18px;
+      color: #bfc5b8;
       font-size: 12.5px;
     }
 
-    .leader-contact span {
-      color: var(--gold-bright);
-      font-weight: 600;
+    .division-content li + li {
+      margin-top: 5px;
     }
 
     /* FOOTER */
@@ -371,8 +440,11 @@
       .header-inner {
         gap: 15px;
       }
-      .leader-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 860px) {
+      .divisions-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -419,8 +491,8 @@
       .footer-inner {
         width: min(100% - 30px, var(--max));
       }
-      .leader-grid {
-        grid-template-columns: 1fr;
+      .division-content {
+        padding: 20px;
       }
       .footer-inner p {
         width: 100%;
@@ -439,337 +511,388 @@
       <nav class="main-nav" id="mainNav">
         <a class="nav-link" href="index.html">Главная</a>
         <a class="nav-link" href="academy.html">Правила</a>
-        <a class="nav-link active" href="leadership.html">Руководство</a>
-        <a class="nav-link" href="rules.html">Подразделения</a>
+        <a class="nav-link" href="leadership.html">Руководство</a>
+        <a class="nav-link active" href="rules.html">Подразделения</a>
         <a class="nav-link" href="promotions.html">Повышения</a>
         <a class="nav-link" href="exams.html">Экзамены</a>
         <a class="nav-link" href="materials.html">Материалы</a>
       </nav>
     </div>
   </header>
-<main>
-<section class="content-section page-section">
-  <div class="page-banner">
-    <p class="eyebrow">SAN ANDREAS NATIONAL GUARD</p>
-    <h2>Подразделения SANG</h2>
-    <p>Структура, специализация и задачи каждого подразделения Национальной гвардии.</p>
-  </div>
-  <div class="section-wrap">
-    <div class="divisions-intro">
-      <p class="eyebrow">MILITARY STRUCTURE</p>
-      <h2>Структура SANG</h2>
-      <p>
-        San Andreas National Guard включает в себя 11 подразделений,
-        каждое из которых выполняет определённые задачи и отвечает
-        за отдельные направления деятельности.
-      </p>
-    </div>
-    <div class="divisions-grid">
-      <!-- 15.3.1 MP -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/mp.jpg" alt="Military Police" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">MILITARY POLICE</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.1</span>
-          <h3 class="division-title">Military Police</h3>
-          <span class="division-code">MP</span>
-          <p class="division-fullname">ВОЕННАЯ ПОЛИЦИЯ</p>
-          <p class="division-description">
-            Спецподразделение, ведущее деятельность по контролю сотрудников
-            SANG, выполняющее функции административного контроля, проводящее
-            проверки сотрудников на знание устава, наличие действующих
-            медицинских справок и удостоверений, следящее за соблюдением
-            положений уставов и иных нормативно-правовых актов на территории
-            Форта-Занкудо; занимается поиском дезертиров.
-          </p>
-          <h4>Задачи MP</h4>
-          <ul>
-            <li>Выезжать на поиск дезертиров;</li>
-            <li>Выписывать дисциплинарные взыскания за нарушения Устава SANG и других нормативно-правовых актов;</li>
-            <li>Требовать от сотрудников беспрепятственного предъявления документов (паспорта, медицинской карты, лицензий) для своевременного выявления нарушений военнослужащих SANG;</li>
-            <li>Отправлять на переаттестацию сотрудников SANG (от звания Lieutenant Colonel);</li>
-            <li>Отстранять от рабочих обязанностей сотрудников SANG (от звания Colonel);</li>
-            <li>Следить за работой всех подразделений (от звания Major);</li>
-            <li>Проверять отчетность по складу и транспорту;</li>
-            <li>Проверять правильность заполнения формы по перерывам, военным билетам, лицензиям на оружие и прочим формам отчетности;</li>
-            <li>Оказывать помощь другим военнослужащим в изучении устава SANG.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.2 MA -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/ma.jpg" alt="Military Academy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">MILITARY ACADEMY</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.2</span>
-          <h3 class="division-title">Military Academy</h3>
-          <span class="division-code">MA</span>
-          <p class="division-fullname">ВОЕННАЯ АКАДЕМИЯ</p>
-          <p class="division-description">
-            Подразделение, занимающееся обучением военнослужащих, а также
-            проводящее экзамены для проверки теоретических знаний. Отдел
-            также занимается курированием академии SANG и непосредственно
-            несёт ответственность за людей, состоящих в Academy и КМБ.
-          </p>
-          <h4>Задачи MA</h4>
-          <ul>
-            <li>Проведение наборов среди желающих вступить в ряды San-Andreas National Guard;</li>
-            <li>Обучение кадетов и подготовка их к выпуску из академии и КМБ;</li>
-            <li>Поддержание порядка и основной дисциплины кадетов.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.3 SEAL -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/seal.jpg" alt="United States Navy SEAL" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">UNITED STATES NAVY SEAL</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.3</span>
-          <h3 class="division-title">United States Navy SEAL</h3>
-          <span class="division-code">SEAL</span>
-          <p class="division-fullname">ВОЕННО-МОРСКОЙ СПЕЦНАЗ</p>
-          <p class="division-description">
-            Тактическое подразделение армейского спецназа, созданное для
-            выполнения самых сложных и опасных миссий. Эти бойцы обучены
-            действовать в любых условиях — от экстремального климата до
-            боевых зон с высокой угрозой. Их миссии охватывают всё: от
-            разведки до нейтрализации целей, спасения заложников и обеспечения
-            безопасности на воде, воздухе и суше.
-          </p>
-          <h4>Задачи SEAL</h4>
-          <ul>
-            <li>Огневая поддержка операций и взаимодействие с другими силовыми структурами;</li>
-            <li>Противодействие терроризму и борьба с высокими угрозами;</li>
-            <li>Участие в боевых действиях и проведение операций по спасению заложников;</li>
-            <li>Задержание и нейтрализация криминальных элементов с соблюдением всех кодексов штата SA;</li>
-            <li>Поддержка и координация с подразделением DELTA FORCE в боевых миссиях;</li>
-            <li>Логистическая помощь в поставках материалов и оборудования для других силовых ведомств.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.4 SOG -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/sog.jpg" alt="Studies and Observations Group" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">STUDIES AND OBSERVATIONS GROUP</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.4</span>
-          <h3 class="division-title">Studies and Observations Group</h3>
-          <span class="division-code">SOG</span>
-          <p class="division-fullname">ГРУППА ИЗУЧЕНИЯ И НАБЛЮДЕНИЯ</p>
-          <p class="division-description">
-            Подразделение, подготовленное обеспечить полную безопасность
-            и неприкосновенность острова, отвечает за периметральную охрану,
-            контроль за движением на акватории вокруг острова и предотвращение
-            любых угроз, способных поставить под угрозу его конфиденциальность.
-          </p>
-          <h4>Задачи SOG</h4>
-          <ul>
-            <li>Патрулирование и защита периметра острова;</li>
-            <li>Отвечает за логистическую поддержку, доставляя необходимые ресурсы для эффективной работы острова;</li>
-            <li>По мере необходимости подразделение привлекается к выполнению специфических задач.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.5 DIV -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/div.jpg" alt="Division" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">DIVISION</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.5</span>
-          <h3 class="division-title">Division</h3>
-          <span class="division-code">DIV</span>
-          <p class="division-fullname">ОСНОВНОЕ ПОДРАЗДЕЛЕНИЕ SANG</p>
-          <p class="division-description">
-            Основное подразделение SANG, занимающееся обороной Форта-Занкудо,
-            поставками материалов и оборудования для других силовых ведомств.
-          </p>
-          <h4>Задачи DIV</h4>
-          <ul>
-            <li>Логистическая помощь в поставках материалов и оборудования для других силовых ведомств;</li>
-            <li>Огневая поддержка операций и взаимодействие с другими силовыми структурами;</li>
-            <li>Бережно относиться к спецтехнике и не допускать посторонних к ней;</li>
-            <li>Патрулирование и защита периметра Форта-Занкудо.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.6 MMS -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/mms.jpg" alt="Military Medical Service" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">MILITARY MEDICAL SERVICE</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.6</span>
-          <h3 class="division-title">Military Medical Service</h3>
-          <span class="division-code">MMS</span>
-          <p class="division-fullname">ВОЕННО-МЕДИЦИНСКАЯ СЛУЖБА</p>
-          <p class="division-description">
-            Подразделение полевых медиков SANG, отвечающих за помощь
-            военнослужащим как во время боевых действий, так и на территории
-            Форта-Занкудо, а также обучение состава основам медицины.
-          </p>
-          <h4>Задачи MMS</h4>
-          <ul>
-            <li>Сохранять и укреплять здоровье всего личного состава военнослужащих;</li>
-            <li>Проводить всесторонние подготовки, от теоретических лекций до физических зарядок;</li>
-            <li>Заниматься организационным оформлением системы предупреждений, экспертизы, наблюдения и коррекции состояния здоровья военнослужащих;</li>
-            <li>Создавать условия для гарантированного медицинского обеспечения всех сотрудников SANG.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.7 DF -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/df.jpg" alt="Delta Force" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">DELTA FORCE</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.7</span>
-          <h3 class="division-title">Delta Force</h3>
-          <span class="division-code">DF</span>
-          <p class="division-fullname">СПЕЦИАЛЬНОЕ ПОДРАЗДЕЛЕНИЕ</p>
-          <p class="division-description">
-            Спецподразделение, специализирующееся на подготовке первоклассных
-            стрелков, проведении тренировок, осуществлении патрулирования
-            наземного пространства, организации спецопераций и непосредственном
-            участии в них.
-          </p>
-          <h4>Задачи DF</h4>
-          <ul>
-            <li>Оказывать помощь силовым структурам в борьбе с преступностью;</li>
-            <li>Разработка тактики нападения и захвата, предотвращение похищений и устранение угроз высокой степени опасности;</li>
-            <li>Быстрое реагирование на коды 0, 1, 7;</li>
-            <li>Сопровождать высшие чины армии.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.8 USAF -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/usaf.jpg" alt="US Air Force" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">US AIR FORCE</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.8</span>
-          <h3 class="division-title">US Air Force</h3>
-          <span class="division-code">USAF</span>
-          <p class="division-fullname">ВОЕННО-ВОЗДУШНЫЕ СИЛЫ</p>
-          <p class="division-description">
-            Подразделение, оставляющее за собой обязанности по воздушному
-            патрулированию территории SANG. Также занимается поставкой
-            материалов для армии с авианосца. Для службы в AF необходимо
-            пройти дополнительное обучение руководящим составом USAF
-            и сдать экзамен на управление лётной техникой.
-          </p>
-          <h4>Задачи USAF</h4>
-          <ul>
-            <li>Патрулировать, охранять воздушное пространство штата, а также вести преследование подозрительных скоплений автомобилей;</li>
-            <li>Поставлять материалы с авианосца в соответствии с государственным заказом;</li>
-            <li>Сопровождать военные поставки с воздуха;</li>
-            <li>Транспортировать личный состав Национальной гвардии по запросу;</li>
-            <li>Бережно относиться к лётной технике и не допускать посторонних к ней;</li>
-            <li>Принимать экзамены на лётную технику у сотрудников всех государственных структур, кто в этом нуждается.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.9 AF -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/af.jpg" alt="Alpha Force" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">ALPHA FORCE</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.9</span>
-          <h3 class="division-title">Alpha Force</h3>
-          <span class="division-code">AF</span>
-          <p class="division-fullname">СПЕЦИАЛЬНОЕ ПОДРАЗДЕЛЕНИЕ</p>
-          <p class="division-description">
-            Спецподразделение, специализирующееся на подготовке первоклассных
-            стрелков, проведении тренировок, осуществлении патрулирования
-            наземного пространства, организации спецопераций и непосредственном
-            участии в них.
-          </p>
-          <h4>Задачи AF</h4>
-          <ul>
-            <li>Оказывать помощь силовым структурам в борьбе с преступностью;</li>
-            <li>Разработка тактики нападения и захвата, предотвращение похищений и устранение угроз высокой степени опасности;</li>
-            <li>Быстрое реагирование на коды 0, 1, 7.</li>
-          </ul>
-        </div>
-      </article>
-      <!-- 15.3.10 CG -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/cg.jpg" alt="Coast Guard" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">COAST GUARD</span>
-        </div>
-        <div class="division-content">
-          <span class="division-number">15.3.10</span>
-          <h3 class="division-title">Coast Guard</h3>
-          <span class="division-code">CG</span>
-          <p class="division-fullname">БЕРЕГОВАЯ ОХРАНА</p>
 
-          <p class="division-description">
-            Подразделение, оставляющее за собой обязанности по водному
-            патрулированию границ штата SA. Также участвует в поставке
-            материалов для армии.
+  <main>
+    <section class="content-section page-section">
+      <div class="page-banner">
+        <div class="page-banner-inner">
+          <p class="eyebrow">SAN ANDREAS NATIONAL GUARD</p>
+          <h2>Подразделения SANG</h2>
+          <p>Структура, специализация и задачи каждого подразделения Национальной гвардии.</p>
+        </div>
+      </div>
+
+      <div class="section-wrap">
+        <div class="divisions-intro">
+          <p class="eyebrow">MILITARY STRUCTURE</p>
+          <h2>Структура SANG</h2>
+          <p>
+            San Andreas National Guard включает в себя 11 подразделений,
+            каждое из которых выполняет определённые задачи и отвечает
+            за отдельные направления деятельности.
           </p>
-          <h4>Задачи CG</h4>
-          <ul>
-            <li>Патрулировать и охранять водное пространство штата;</li>
-            <li>Помогать в поставке материалов;</li>
-            <li>Бережно относиться к водной технике и не допускать посторонних к ней.</li>
-          </ul>
         </div>
-      </article>
-      <!-- 15.3.11 MCE -->
-      <article class="division-card">
-        <div class="division-photo">
-          <img src="images/mce.jpg" alt="Military Culture Education" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="division-photo-placeholder">MILITARY CULTURE EDUCATION</span>
+
+        <div class="divisions-grid">
+          <!-- 15.3.1 MP -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/mp.jpg" alt="Military Police" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">MILITARY POLICE</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">MP</span>
+              </div>
+              <h3 class="division-title">Military Police</h3>
+              <p class="division-description">
+                Спецподразделение, ведущее деятельность по контролю сотрудников
+                SANG, выполняющее функции административного контроля, проводящее
+                проверки сотрудников на знание устава, наличие действующих
+                медицинских справок и удостоверений, следящее за соблюдением
+                положений уставов и иных нормативно-правовых актов на территории
+                Форта-Занкудо; занимается поиском дезертиров.
+              </p>
+              <h4>Задачи MP</h4>
+              <ul>
+                <li>Выезжать на поиск дезертиров;</li>
+                <li>Выписывать дисциплинарные взыскания за нарушения Устава SANG и других нормативно-правовых актов;</li>
+                <li>Требовать от сотрудников беспрепятственного предъявления документов (паспорта, медицинской карты, лицензий) для своевременного выявления нарушений военнослужащих SANG;</li>
+                <li>Отправлять на переаттестацию сотрудников SANG (от звания Lieutenant Colonel);</li>
+                <li>Отстранять от рабочих обязанностей сотрудников SANG (от звания Colonel);</li>
+                <li>Следить за работой всех подразделений (от звания Major);</li>
+                <li>Проверять отчетность по складу и транспорту;</li>
+                <li>Проверять правильность заполнения формы по перерывам, военным билетам, лицензиям на оружие и прочим формам отчетности;</li>
+                <li>Оказывать помощь другим военнослужащим в изучении устава SANG.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.2 MA -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/ma.jpg" alt="Military Academy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">MILITARY ACADEMY</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">MA</span>
+              </div>
+              <h3 class="division-title">Military Academy</h3>
+              <p class="division-description">
+                Подразделение, занимающееся обучением военнослужащих, а также
+                проводящее экзамены для проверки теоретических знаний. Отдел
+                также занимается курированием академии SANG и непосредственно
+                несёт ответственность за людей, состоящих в Academy и КМБ.
+              </p>
+              <h4>Задачи MA</h4>
+              <ul>
+                <li>Проведение наборов среди желающих вступить в ряды San-Andreas National Guard;</li>
+                <li>Обучение кадетов и подготовка их к выпуску из академии и КМБ;</li>
+                <li>Поддержание порядка и основной дисциплины кадетов.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.3 SEAL -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/seal.jpg" alt="United States Navy SEAL" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">UNITED STATES NAVY SEAL</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">SEAL</span>
+              </div>
+              <h3 class="division-title">United States Navy SEAL</h3>
+              <p class="division-description">
+                Тактическое подразделение армейского спецназа, созданное для
+                выполнения самых сложных и опасных миссий. Эти бойцы обучены
+                действовать в любых условиях — от экстремального климата до
+                боевых зон с высокой угрозой. Их миссии охватывают всё: от
+                разведки до нейтрализации целей, спасения заложников и обеспечения
+                безопасности на воде, воздухе и суше.
+              </p>
+              <h4>Задачи SEAL</h4>
+              <ul>
+                <li>Огневая поддержка операций и взаимодействие с другими силовыми структурами;</li>
+                <li>Противодействие терроризму и борьба с высокими угрозами;</li>
+                <li>Участие в боевых действиях и проведение операций по спасению заложников;</li>
+                <li>Задержание и нейтрализация криминальных элементов с соблюдением всех кодексов штата SA;</li>
+                <li>Поддержка и координация с подразделением DELTA FORCE в боевых миссиях;</li>
+                <li>Логистическая помощь в поставках материалов и оборудования для других силовых ведомств.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.4 SOG -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/sog.jpg" alt="Studies and Observations Group" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">STUDIES AND OBSERVATIONS GROUP</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">SOG</span>
+              </div>
+              <h3 class="division-title">Studies and Observations Group</h3>
+              <p class="division-description">
+                Подразделение, подготовленное обеспечить полную безопасность
+                и неприкосновенность острова, отвечает за периметральную охрану,
+                контроль за движением на акватории вокруг острова и предотвращение
+                любых угроз, способных поставить под угрозу его конфиденциальность.
+              </p>
+              <h4>Задачи SOG</h4>
+              <ul>
+                <li>Патрулирование и защита периметра острова;</li>
+                <li>Отвечает за логистическую поддержку, доставляя необходимые ресурсы для эффективной работы острова;</li>
+                <li>По мере необходимости подразделение привлекается к выполнению специфических задач.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.5 DIV -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/div.jpg" alt="Division" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">DIVISION</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">DIV</span>
+              </div>
+              <h3 class="division-title">Division</h3>
+              <p class="division-description">
+                Основное подразделение SANG, занимающееся обороной Форта-Занкудо,
+                поставками материалов и оборудования для других силовых ведомств.
+              </p>
+              <h4>Задачи DIV</h4>
+              <ul>
+                <li>Логистическая помощь в поставках материалов и оборудования для других силовых ведомств;</li>
+                <li>Огневая поддержка операций и взаимодействие с другими силовыми структурами;</li>
+                <li>Бережно относиться к спецтехнике и не допускать посторонних к ней;</li>
+                <li>Патрулирование и защита периметра Форта-Занкудо.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.6 MMS -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/mms.jpg" alt="Military Medical Service" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">MILITARY MEDICAL SERVICE</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">MMS</span>
+              </div>
+              <h3 class="division-title">Military Medical Service</h3>
+              <p class="division-description">
+                Подразделение полевых медиков SANG, отвечающих за помощь
+                военнослужащим как во время боевых действий, так и на территории
+                Форта-Занкудо, а также обучение состава основам медицины.
+              </p>
+              <h4>Задачи MMS</h4>
+              <ul>
+                <li>Сохранять и укреплять здоровье всего личного состава военнослужащих;</li>
+                <li>Проводить всесторонние подготовки, от теоретических лекций до физических зарядок;</li>
+                <li>Заниматься организационным оформлением системы предупреждений, экспертизы, наблюдения и коррекции состояния здоровья военнослужащих;</li>
+                <li>Создавать условия для гарантированного медицинского обеспечения всех сотрудников SANG.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.7 DF -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/df.jpg" alt="Delta Force" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">DELTA FORCE</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">DF</span>
+              </div>
+              <h3 class="division-title">Delta Force</h3>
+              <p class="division-description">
+                Спецподразделение, специализирующееся на подготовке первоклассных
+                стрелков, проведении тренировок, осуществлении патрулирования
+                наземного пространства, организации спецопераций и непосредственном
+                участии в них.
+              </p>
+              <h4>Задачи DF</h4>
+              <ul>
+                <li>Оказывать помощь силовым структурам в борьбе с преступностью;</li>
+                <li>Разработка тактики нападения и захвата, предотвращение похищений и устранение угроз высокой степени опасности;</li>
+                <li>Быстрое реагирование на коды 0, 1, 7;</li>
+                <li>Сопровождать высшие чины армии.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.8 USAF -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/usaf.jpg" alt="US Air Force" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">US AIR FORCE</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">USAF</span>
+              </div>
+              <h3 class="division-title">US Air Force</h3>
+              <p class="division-description">
+                Подразделение, оставляющее за собой обязанности по воздушному
+                патрулированию территории SANG. Также занимается поставкой
+                материалов для армии с авианосца. Для службы в AF необходимо
+                пройти дополнительное обучение руководящим составом USAF
+                и сдать экзамен на управление лётной техникой.
+              </p>
+              <h4>Задачи USAF</h4>
+              <ul>
+                <li>Патрулировать, охранять воздушное пространство штата, а также вести преследование подозрительных скоплений автомобилей;</li>
+                <li>Поставлять материалы с авианосца в соответствии с государственным заказом;</li>
+                <li>Сопровождать военные поставки с воздуха;</li>
+                <li>Транспортировать личный состав Национальной гвардии по запросу;</li>
+                <li>Бережно относиться к лётной технике и не допускать посторонних к ней;</li>
+                <li>Принимать экзамены на лётную технику у сотрудников всех государственных структур, кто в этом нуждается.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.9 AF -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/af.jpg" alt="Alpha Force" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">ALPHA FORCE</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">AF</span>
+              </div>
+              <h3 class="division-title">Alpha Force</h3>
+              <p class="division-description">
+                Спецподразделение, специализирующееся на подготовке первоклассных
+                стрелков, проведении тренировок, осуществлении патрулирования
+                наземного пространства, организации спецопераций и непосредственном
+                участии в них.
+              </p>
+              <h4>Задачи AF</h4>
+              <ul>
+                <li>Оказывать помощь силовым структурам в борьбе с преступностью;</li>
+                <li>Разработка тактики нападения и захвата, предотвращение похищений и устранение угроз высокой степени опасности;</li>
+                <li>Быстрое реагирование на коды 0, 1, 7.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.10 CG -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/cg.jpg" alt="Coast Guard" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">COAST GUARD</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">CG</span>
+              </div>
+              <h3 class="division-title">Coast Guard</h3>
+              <p class="division-description">
+                Подразделение, оставляющее за собой обязанности по водному
+                патрулированию границ штата SA. Также участвует в поставке
+                материалов для армии.
+              </p>
+              <h4>Задачи CG</h4>
+              <ul>
+                <li>Патрулировать и охранять водное пространство штата;</li>
+                <li>Помогать в поставке материалов;</li>
+                <li>Бережно относиться к водной технике и не допускать посторонних к ней.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 15.3.11 MCE -->
+          <article class="division-card">
+            <div class="division-photo">
+              <img src="images/mce.jpg" alt="Military Culture Education" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+              <span class="division-photo-placeholder">MILITARY CULTURE EDUCATION</span>
+            </div>
+            <div class="division-content">
+              <div class="division-header">
+                <span class="division-code">MCE</span>
+              </div>
+              <h3 class="division-title">Military Culture Education</h3>
+              <p class="division-fullname">ВОЕННО-КУЛЬТУРНОЕ ОБРАЗОВАНИЕ</p>
+              <p class="division-description">
+                Структурное подразделение, являющееся подотделом MA, которое
+                занимается разработкой и курированием на всех этапах проведения
+                культурно-досуговой деятельности сотрудников SANG.
+              </p>
+              <h4>Задачи MCE</h4>
+              <ul>
+                <li>Разработка культурных мероприятий для сотрудников SANG;</li>
+                <li>Собирать сотрудников для участия в мероприятиях с другими государственными структурами;</li>
+                <li>Проводить культурно-массовые мероприятия с сотрудниками SANG.</li>
+              </ul>
+            </div>
+          </article>
         </div>
-        <div class="division-content">
-          <span class="division-number">15.3.11</span>
-          <h3 class="division-title">Military Culture Education</h3>
-          <span class="division-code">MCE</span>
-          <p class="division-fullname">ВОЕННО-КУЛЬТУРНОЕ ОБРАЗОВАНИЕ</p>
-          <p class="division-description">
-            Структурное подразделение, являющееся подотделом MA, которое
-            занимается разработкой и курированием на всех этапах проведения
-            культурно-досуговой деятельности сотрудников SANG.
-          </p>
-          <h4>Задачи MCE</h4>
-          <ul>
-            <li>Разработка культурных мероприятий для сотрудников SANG;</li>
-            <li>Собирать сотрудников для участия в мероприятиях с другими государственными структурами;</li>
-            <li>Проводить культурно-массовые мероприятия с сотрудниками SANG.</li>
-          </ul>
-        </div>
-      </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
+      <p>MAJESTIC · MEMPHIS · SANG</p>
+      <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
     </div>
-  </div>
-</section>
-</main>
-<footer class="site-footer">
-  <a class="footer-brand" href="index.html">
-    SANG <span>/ MILITARY ACADEMY</span>
-  </a>
-  <p>MAJESTIC · MEMPHIS · SANG</p>
-  <p class="copyright">
-    © <span id="year"></span> SANG Military Academy. Информационный портал.
-  </p>
-</footer>
-<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
-<script src="script.js"></script>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop() || "rules.html";
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+      });
+    }
+
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        toTop.classList.add("visible");
+      } else {
+        toTop.classList.remove("visible");
+      }
+    });
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 </html>

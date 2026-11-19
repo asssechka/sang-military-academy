@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101610">
-  <meta name="description" content="Подразделения San Andreas National Guard — SANG Military Academy.">
-  <title>Подразделения | SANG Military Academy</title>
+  <meta name="description" content="Нормативные материалы и документы — SANG Military Academy.">
+  <title>Материалы | SANG Military Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,9 +24,11 @@
       --radius: 13px;
       --max: 1180px;
     }
+
     * {
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
     }
@@ -149,21 +151,15 @@
       cursor: pointer;
     }
 
-    /* PAGE & BANNERS */
-    .page-section {
+    /* CONTAINER & HERO */
+    .container {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
       padding-bottom: 70px;
     }
 
-    .page-banner {
-      width: 100%;
-      background: transparent;
-      border: none;
-      padding: 64px 0 20px;
-    }
-
-    .page-banner-inner {
-      width: min(var(--max), calc(100% - 44px));
-      margin: 0 auto;
+    .hero {
+      padding: 64px 0 28px;
     }
 
     .eyebrow {
@@ -185,180 +181,234 @@
       background: var(--gold);
     }
 
-    .page-banner h2 {
-      margin: 14px 0 10px;
-      font: 700 clamp(40px, 5.5vw, 62px)/1 "Barlow Condensed", sans-serif;
+    .hero h1 {
+      margin: 14px 0 12px;
+      font: 700 clamp(42px, 5.5vw, 64px)/1 "Barlow Condensed", sans-serif;
       letter-spacing: .02em;
       text-transform: uppercase;
       color: var(--text);
     }
 
-    .page-banner p:last-child {
-      margin: 0;
+    .hero h1 span {
+      color: var(--gold-bright);
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
       color: #b8beb1;
-      font-size: 14px;
-      max-width: 680px;
+      font-size: 14.5px;
+      max-width: 660px;
     }
 
-    .section-wrap {
-      width: min(var(--max), calc(100% - 44px));
-      margin: 28px auto 0;
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    /* DIVISIONS INTRO */
-    .divisions-intro {
-      margin-bottom: 32px;
-      padding: 24px 28px;
-      border: 1px solid rgba(197, 166, 101, .28);
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: rgba(18, 26, 19, .85);
+      color: #cfd4c8;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .meta-chip b {
+      color: var(--gold-bright);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 15px;
+      letter-spacing: .06em;
+    }
+
+    /* NOTICE */
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin: 8px 0 40px;
+      padding: 20px 24px;
+      border: 1px solid rgba(197, 166, 101, .3);
       border-left: 3px solid var(--gold);
       border-radius: var(--radius);
-      background: linear-gradient(100deg, rgba(197, 166, 101, .09), rgba(18, 26, 19, .95));
+      background: linear-gradient(100deg, rgba(197, 166, 101, .11), rgba(18, 26, 19, .95));
     }
 
-    .divisions-intro h2 {
-      margin: 10px 0 8px;
-      font: 700 32px/1.1 "Barlow Condensed", sans-serif;
-      letter-spacing: .02em;
+    .notice-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(197, 166, 101, .45);
+      border-radius: 8px;
+      background: rgba(197, 166, 101, .12);
+      color: var(--gold-bright);
+      font-size: 16px;
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gold-bright);
+      font: 700 20px/1.2 "Barlow Condensed", sans-serif;
+      letter-spacing: .04em;
       text-transform: uppercase;
     }
 
-    .divisions-intro p:last-child {
+    .notice p {
       margin: 0;
-      color: #c5cabd;
-      font-size: 13.5px;
-      max-width: 780px;
+      color: #cfd4c8;
+      font-size: 13px;
     }
 
-    /* DIVISIONS GRID & CARDS */
-    .divisions-grid {
+    /* SECTION HEADING */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 24px;
+      font: 700 32px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .section-heading span {
+      padding: 3px 10px;
+      border: 1px solid rgba(197, 166, 101, .4);
+      border-radius: 6px;
+      background: rgba(197, 166, 101, .1);
+      color: var(--gold-bright);
+      font-size: 16px;
+      letter-spacing: .12em;
+    }
+
+    /* DOCUMENTS GRID & CARDS */
+    .documents {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
+      align-items: stretch;
     }
 
-    .division-card {
+    .document-card {
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      padding: 26px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
       transition: transform .22s ease, border-color .22s ease;
     }
 
-    .division-card:hover {
+    .document-card:hover {
       transform: translateY(-3px);
       border-color: rgba(197, 166, 101, .48);
     }
 
-    .division-photo {
-      position: relative;
-      height: 170px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(197, 166, 101, .14), transparent 60%),
-        linear-gradient(135deg, #162017 0%, #0d140e 100%);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .division-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .division-photo-placeholder {
-      display: grid;
-      place-items: center;
-      width: 100%;
-      height: 100%;
-      padding: 16px;
-      text-align: center;
-      font: 800 26px/1.1 "Barlow Condensed", sans-serif;
-      letter-spacing: .16em;
-      color: rgba(226, 199, 131, .28);
-      text-transform: uppercase;
-      user-select: none;
-    }
-
-    .division-photo img + .division-photo-placeholder {
-      display: none;
-    }
-
-    .division-content {
-      padding: 24px 26px 26px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .division-header {
+    .card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 14px;
     }
 
-    .division-number {
+    .card-number {
       color: #8f9a84;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       letter-spacing: .18em;
     }
 
-    .division-code {
-      padding: 3px 10px;
-      border: 1px solid rgba(197, 166, 101, .4);
+    .card-tag {
+      padding: 3px 9px;
+      border: 1px solid rgba(120, 139, 98, .45);
       border-radius: 5px;
-      background: rgba(197, 166, 101, .1);
-      color: var(--gold-bright);
-      font: 700 12px "Barlow Condensed", sans-serif;
-      letter-spacing: .12em;
+      background: rgba(120, 139, 98, .12);
+      color: #c7d9b2;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
-    .division-title {
-      margin: 0 0 4px;
+    .card-tag.required {
+      border-color: rgba(196, 124, 104, .45);
+      background: rgba(196, 124, 104, .12);
+      color: #eab3a4;
+    }
+
+    .document-card h3 {
+      margin: 0 0 8px;
       font: 700 28px/1.1 "Barlow Condensed", sans-serif;
       letter-spacing: .02em;
       color: var(--text);
     }
 
-    .division-fullname {
-      margin: 0 0 14px;
-      color: var(--gold);
-      font-size: 10.5px;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .division-description {
-      margin: 0 0 16px;
-      color: #cfd4c8;
+    .card-description {
+      margin: 0 0 18px;
+      color: var(--muted);
       font-size: 13px;
     }
 
-    .division-content h4 {
-      margin: auto 0 8px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      color: var(--gold-bright);
-      font: 700 12px/1.3 "Manrope", sans-serif;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+    .document-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
     }
 
-    .division-content ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #bfc5b8;
+    .document-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 13px;
+      border: 1px solid rgba(197, 166, 101, .24);
+      border-radius: 8px;
+      background: rgba(197, 166, 101, .06);
+      color: #e6e8df;
       font-size: 12.5px;
+      font-weight: 600;
+      transition: .2s ease;
     }
 
-    .division-content li + li {
-      margin-top: 5px;
+    .document-link:hover {
+      background: rgba(197, 166, 101, .16);
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      transform: translateX(3px);
+    }
+
+    .document-link .arrow {
+      color: var(--gold);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* REMINDER */
+    .reminder {
+      margin-top: 32px;
+      padding: 20px 24px;
+      border: 1px solid rgba(197, 166, 101, .28);
+      border-left: 3px solid var(--gold);
+      border-radius: 9px;
+      background: linear-gradient(100deg, rgba(197, 166, 101, .09), rgba(197, 166, 101, .02));
+      color: #cfd4c8;
+      font-size: 13.5px;
+    }
+
+    .reminder strong {
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      letter-spacing: .05em;
     }
 
     /* FOOTER */
@@ -438,10 +488,7 @@
       .header-inner {
         gap: 15px;
       }
-    }
-
-    @media (max-width: 860px) {
-      .divisions-grid {
+      .documents {
         grid-template-columns: 1fr;
       }
     }
@@ -483,14 +530,17 @@
     }
 
     @media (max-width: 560px) {
-      .page-banner-inner,
-      .section-wrap,
+      .container,
       .header-inner,
       .footer-inner {
         width: min(100% - 30px, var(--max));
       }
-      .division-content {
+      .document-card {
         padding: 20px;
+      }
+      .notice {
+        flex-direction: column;
+        gap: 12px;
       }
       .footer-inner p {
         width: 100%;
@@ -510,345 +560,265 @@
         <a class="nav-link" href="index.html">Главная</a>
         <a class="nav-link" href="academy.html">Правила</a>
         <a class="nav-link" href="leadership.html">Руководство</a>
-        <a class="nav-link active" href="rules.html">Подразделения</a>
+        <a class="nav-link" href="rules.html">Подразделения</a>
         <a class="nav-link" href="promotions.html">Повышения</a>
         <a class="nav-link" href="exams.html">Экзамены</a>
-        <a class="nav-link" href="materials.html">Материалы</a>
+        <a class="nav-link active" href="materials.html">Материалы</a>
       </nav>
     </div>
   </header>
-<main class="container">
 
-  <!-- INTRO -->
-
-  <section class="hero">
-
-    <div class="eyebrow">
-      San Andreas National Guard
-    </div>
-
-    <h1>
-      Памятка <span>SANG</span>
-    </h1>
-
-    <p class="subtitle">
-      Основные документы и нормативные материалы,
-      необходимые для службы в рядах Национальной гвардии.
-    </p>
-
-    <div class="hero-meta">
-      <span class="meta-chip"><b>01</b> Документы</span>
-      <span class="meta-chip"><b>07</b> Кодексов и законов</span>
-      <span class="meta-chip"><b>08</b> Правил проекта</span>
-    </div>
-
-  </section>
-
-  <!-- NOTICE -->
-
-  <aside class="notice">
-
-    <div class="notice-icon">⚠</div>
-
-    <div>
-      <strong>Важная информация</strong>
-
-      <p>
-        Не нужно заучивать все документы наизусть.
-        Используйте ссылки ниже, чтобы при необходимости
-        открыть нужный текст и ознакомиться с ним.
+  <main class="container">
+    <!-- INTRO -->
+    <section class="hero">
+      <div class="eyebrow">San Andreas National Guard</div>
+      <h1>Памятка <span>SANG</span></h1>
+      <p class="subtitle">
+        Основные документы и нормативные материалы,
+        необходимые для службы в рядах Национальной гвардии.
       </p>
+      <div class="hero-meta">
+        <span class="meta-chip"><b>03</b> Документа SANG</span>
+        <span class="meta-chip"><b>07</b> Кодексов и законов</span>
+        <span class="meta-chip"><b>08</b> Правил проекта</span>
+      </div>
+    </section>
+
+    <!-- NOTICE -->
+    <aside class="notice">
+      <div class="notice-icon">⚠</div>
+      <div>
+        <strong>Важная информация</strong>
+        <p>
+          Не нужно заучивать все документы наизусть.
+          Используйте ссылки ниже, чтобы при необходимости
+          открыть нужный текст и ознакомиться с ним.
+        </p>
+      </div>
+    </aside>
+
+    <!-- DOCUMENTS -->
+    <section aria-labelledby="documents-title">
+      <h2 class="section-heading" id="documents-title">
+        <span>01</span>
+        Документы SANG
+      </h2>
+
+      <div class="documents">
+        <!-- DOCUMENT 01 -->
+        <article class="document-card">
+          <div class="card-top">
+            <span class="card-number">DOCUMENT / 01</span>
+            <span class="card-tag required">Обязательно</span>
+          </div>
+          <h3>Устав SANG</h3>
+          <p class="card-description">
+            Внутренний документ Национальной гвардии.
+            Необходимо знать слово в слово, без изменений и сокращений.
+          </p>
+          <div class="document-links">
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/san-andreas-national-guard-ustav-vnutrennei-sluzhby.3678946/"
+               target="_blank" rel="noopener">
+              <span>Устав Национальной Гвардии</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/san-andreas-national-guard-kabinet-generala.3678860/"
+               target="_blank" rel="noopener">
+              <span>Кабинет Генерала</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/san-andreas-national-guard-zayavleniya-na-perevod-i-trudoustroistvo.3678855/"
+               target="_blank" rel="noopener">
+              <span>Заявления на перевод и трудоустройство</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DOCUMENT 02 -->
+        <article class="document-card">
+          <div class="card-top">
+            <span class="card-number">DOCUMENT / 02</span>
+            <span class="card-tag">Справочник</span>
+          </div>
+          <h3>Законодательство</h3>
+          <p class="card-description">
+            Нормативно-правовые документы штата San Andreas.
+          </p>
+          <div class="document-links">
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/ugolovnyi-kodeks-shtata-san-andreas.3727266/"
+               target="_blank" rel="noopener">
+              <span>Уголовный кодекс</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/administrativnyi-kodeks-shtata-san-andreas.3727269/"
+               target="_blank" rel="noopener">
+              <span>Административный кодекс</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/protsessual-nyi-kodeks-shtata-san-andreas.3727268/"
+               target="_blank" rel="noopener">
+              <span>Процессуальный кодекс</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/dorozhnyi-kodeks-shtata-san-andreas.3727270/"
+               target="_blank" rel="noopener">
+              <span>Дорожный кодекс</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/prilozheniye-no1-k-ugolovnomu-kodeksu-shtata-san-andreas-o-zakrytykh-okhranyayemykh-i-osobo-okhranyayemykh-territoriyakh.3727275/"
+               target="_blank" rel="noopener">
+              <span>Закон о закрытых и охраняемых территориях</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/zakon-o-natsional-noi-gvardii-shtata-san-andreas.3727245/"
+               target="_blank" rel="noopener">
+              <span>Закон о Национальной гвардии</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/trudovoi-kodeks-shtata-san-andreas.3727271/"
+               target="_blank" rel="noopener">
+              <span>Трудовой кодекс</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DOCUMENT 03 -->
+        <article class="document-card">
+          <div class="card-top">
+            <span class="card-number">DOCUMENT / 03</span>
+            <span class="card-tag">Справочник</span>
+          </div>
+          <h3>Правила проекта</h3>
+          <p class="card-description">
+            Правила взаимодействия, проведения мероприятий
+            и деятельности государственных и криминальных организаций.
+          </p>
+          <div class="document-links">
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/forums/general-server-rules/"
+               target="_blank" rel="noopener">
+              <span>Основные правила проекта</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-gosudarstvennykh-organizatsii.8672/"
+               target="_blank" rel="noopener">
+              <span>Правила государственных организаций</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-kriminal-nykh-organizatsii.3977/"
+               target="_blank" rel="noopener">
+              <span>Правила криминальных организаций</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-perekhvata-postavok.123972/"
+               target="_blank" rel="noopener">
+              <span>Перехват поставок</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-voiny-za-airdrop.210836/"
+               target="_blank" rel="noopener">
+              <span>Война за AirDrop</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-ograblenii-i-pokhishchenii.8254/"
+               target="_blank" rel="noopener">
+              <span>Ограбления и похищения</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-territorii-forta-zankudo.8115/"
+               target="_blank" rel="noopener">
+              <span>Оборона Форта Занкудо</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="document-link"
+               href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-ostrova-kaio-periko.645651/"
+               target="_blank" rel="noopener">
+              <span>Оборона Кайо-Перико</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- REMINDER -->
+    <div class="reminder">
+      <strong>Помни:</strong>
+      знание внутреннего устава SANG обязательно.
+      Остальные документы используй как справочник,
+      когда необходимо уточнить конкретное положение.
     </div>
+  </main>
 
-  </aside>
-
-  <!-- DOCUMENTS -->
-
-  <section aria-labelledby="documents-title">
-
-    <h2 class="section-heading" id="documents-title">
-      <span>01</span>
-      Документы SANG
-    </h2>
-
-    <div class="documents">
-
-      <!-- DOCUMENT 01 -->
-
-      <article class="document-card">
-
-        <div class="card-top">
-          <span class="card-number">DOCUMENT / 01</span>
-          <span class="card-tag">Обязательно</span>
-        </div>
-
-        <h3>Устав SANG</h3>
-
-        <p class="card-description">
-          Внутренний документ Национальной гвардии.
-          Необходимо знать слово в слово, без изменений и сокращений.
-        </p>
-
-        <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/san-andreas-national-guard-ustav-vnutrennei-sluzhby.3678946/"
-            target="_blank" rel="noopener">
-            Устав Национальной Гвардии <span class="arrow">↗</span>
-          </a>
-
-        <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/san-andreas-national-guard-kabinet-generala.3678860/"
-            target="_blank" rel="noopener">
-            Кабинет Генерала <span class="arrow">↗</span>
-          </a>
-
-        <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/san-andreas-national-guard-zayavleniya-na-perevod-i-trudoustroistvo.3678855/"
-            target="_blank" rel="noopener">
-            Заявления на перевод и трудоустройство <span class="arrow">↗</span>
-          </a>
-      </article>
-
-      <!-- DOCUMENT 02 -->
-
-      <article class="document-card">
-
-        <div class="card-top">
-          <span class="card-number">DOCUMENT / 02</span>
-          <span class="card-tag">Справочник</span>
-        </div>
-
-        <h3>Законодательство</h3>
-
-        <p class="card-description">
-          Нормативно-правовые документы штата San Andreas.
-        </p>
-
-        <div class="document-links">
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/ugolovnyi-kodeks-shtata-san-andreas.3727266/"
-            target="_blank" rel="noopener">
-            Уголовный кодекс <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/administrativnyi-kodeks-shtata-san-andreas.3727269/"
-            target="_blank" rel="noopener">
-            Административный кодекс <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/protsessual-nyi-kodeks-shtata-san-andreas.3727268/"
-            target="_blank" rel="noopener">
-            Процессуальный кодекс <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/dorozhnyi-kodeks-shtata-san-andreas.3727270/"
-            target="_blank" rel="noopener">
-            Дорожный кодекс <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/prilozheniye-no1-k-ugolovnomu-kodeksu-shtata-san-andreas-o-zakrytykh-okhranyayemykh-i-osobo-okhranyayemykh-territoriyakh.3727275/"
-            target="_blank" rel="noopener">
-            Закон о закрытых и охраняемых территориях
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/zakon-o-natsional-noi-gvardii-shtata-san-andreas.3727245/"
-            target="_blank" rel="noopener">
-            Закон о Национальной гвардии <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/trudovoi-kodeks-shtata-san-andreas.3727271/"
-            target="_blank" rel="noopener">
-            Трудовой кодекс <span class="arrow">↗</span>
-          </a>
-
-        </div>
-      </article>
-
-      <!-- DOCUMENT 03 -->
-
-      <article class="document-card">
-
-        <div class="card-top">
-          <span class="card-number">DOCUMENT / 03</span>
-          <span class="card-tag">Справочник</span>
-        </div>
-
-        <h3>Правила проекта</h3>
-
-        <p class="card-description">
-          Правила взаимодействия, проведения мероприятий
-          и деятельности государственных и криминальных организаций.
-        </p>
-
-        <div class="document-links">
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/forums/general-server-rules/"
-            target="_blank" rel="noopener">
-            Основные правила проекта <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-gosudarstvennykh-organizatsii.8672/"
-            target="_blank" rel="noopener">
-            Правила государственных организаций <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-kriminal-nykh-organizatsii.3977/"
-            target="_blank" rel="noopener">
-            Правила криминальных организаций <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-perekhvata-postavok.123972/"
-            target="_blank" rel="noopener">
-            Перехват поставок <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-voiny-za-airdrop.210836/"
-            target="_blank" rel="noopener">
-            Война за AirDrop <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-ograblenii-i-pokhishchenii.8254/"
-            target="_blank" rel="noopener">
-            Ограбления и похищения <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-territorii-forta-zankudo.8115/"
-            target="_blank" rel="noopener">
-            Оборона Форта Занкудо <span class="arrow">↗</span>
-          </a>
-
-          <a class="document-link"
-            href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-ostrova-kaio-periko.645651/"
-            target="_blank" rel="noopener">
-            Оборона Кайо-Перико <span class="arrow">↗</span>
-          </a>
-
-        </div>
-      </article>
-
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
+      <p>MAJESTIC · MEMPHIS · SANG</p>
+      <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- REMINDER -->
+  <!-- BACK TO TOP -->
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 
-  <div class="reminder">
-    <strong>Помни:</strong>
-    знание внутреннего устава SANG обязательно.
-    Остальные документы используй как справочник,
-    когда необходимо уточнить конкретное положение.
-  </div>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer class="site-footer">
-
-  <div class="footer-inner">
-
-    <a class="footer-brand" href="index.html">
-      SANG <span>/ MILITARY ACADEMY</span>
-    </a>
-
-    <p>MAJESTIC · MEMPHIS · SANG</p>
-
-    <p class="copyright">
-      © <span id="year"></span>
-      SANG Military Academy. Информационный портал.
-    </p>
-
-  </div>
-
-</footer>
-
-<!-- BACK TO TOP -->
-
-<button class="to-top" id="toTop" aria-label="Наверх">
-  ↑
-</button>
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-  // Мобильное меню
-
-  const menuToggle = document.getElementById("menuToggle");
-  const mainNav = document.getElementById("mainNav");
-
-  menuToggle.addEventListener("click", () => {
-
-    const isOpen = mainNav.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Закрыть меню" : "Открыть меню"
-    );
-
-    menuToggle.textContent = isOpen ? "✕" : "☰";
-
-  });
-
-  // Закрытие меню после перехода
-
-  mainNav.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-      mainNav.classList.remove("open");
-
-      menuToggle.setAttribute("aria-expanded", "false");
-
-      menuToggle.textContent = "☰";
-
+  <!-- JAVASCRIPT -->
+  <script>
+    const currentPage = window.location.pathname.split("/").pop() || "materials.html";
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     });
 
-  });
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
-  // Автоматический год в футере
-
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-  // Кнопка возврата наверх
-
-  const toTop = document.getElementById("toTop");
-
-  window.addEventListener("scroll", () => {
-
-    toTop.classList.toggle(
-      "visible",
-      window.scrollY > 350
-    );
-
-  });
-
-  toTop.addEventListener("click", () => {
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+      menuToggle.textContent = isOpen ? "✕" : "☰";
     });
 
-  });
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
 
-</script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTop.classList.toggle("visible", window.scrollY > 350);
+    });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>

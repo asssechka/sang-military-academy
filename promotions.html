@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101610">
-  <meta name="description" content="Руководящий состав Military Academy — San Andreas National Guard.">
-  <title>Руководство | SANG Military Academy</title>
+  <meta name="description" content="Система повышений Military Academy — San Andreas National Guard.">
+  <title>Повышения | SANG Military Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -204,71 +204,204 @@
 
     .section-wrap {
       width: min(var(--max), calc(100% - 44px));
-      margin: 34px auto 0;
+      margin: 26px auto 0;
     }
 
-    .section-heading.left {
-      display: block;
-      margin-bottom: 28px;
+    /* IMPORTANT NOTICE */
+    .important-box {
+      padding: 24px 28px;
+      margin-bottom: 34px;
+      border: 1px solid rgba(196, 124, 104, .38);
+      border-left: 3px solid var(--red);
+      border-radius: var(--radius);
+      background: linear-gradient(100deg, rgba(196, 124, 104, .11), rgba(18, 26, 19, .96));
     }
 
-    .section-heading.left h2 {
-      margin: 0 0 8px;
-      font: 700 32px/1.1 "Barlow Condensed", sans-serif;
-      letter-spacing: .02em;
+    .important-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: #eab3a4;
+      font: 700 22px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .04em;
       text-transform: uppercase;
     }
 
-    .section-heading.left p:last-child {
+    .important-box ul {
       margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 760px;
+      padding-left: 20px;
+      color: #e4dfd9;
+      font-size: 13.5px;
     }
 
-    /* LEADER CARDS */
-    .leader-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .important-box li + li {
+      margin-top: 6px;
     }
 
-    .leader-card {
-      position: relative;
+    /* QUICK NAV TABS */
+    .rank-tabs {
       display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 24px;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .rank-tab {
+      padding: 10px 18px;
+      border: 1px solid rgba(197, 166, 101, .32);
+      border-radius: 8px;
+      background: rgba(18, 26, 19, .9);
+      color: var(--gold-bright);
+      font: 700 15px/1 "Barlow Condensed", sans-serif;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .rank-tab:hover {
+      background: rgba(197, 166, 101, .16);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    /* RANK CARDS */
+    .rank-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .rank-card {
+      scroll-margin-top: 96px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(145deg, rgba(24, 34, 25, .96), rgba(16, 23, 17, .96));
-      transition: transform .22s ease, border-color .22s ease;
+      overflow: hidden;
     }
 
-    .leader-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(197, 166, 101, .48);
+    .rank-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(197, 166, 101, .05);
     }
 
-    .leader-emblem {
-      width: 48px;
-      height: 48px;
+    .rank-card-header h3 {
+      margin: 0;
+      font: 700 30px/1.1 "Barlow Condensed", sans-serif;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .rank-badge {
+      padding: 5px 12px;
+      border: 1px solid rgba(197, 166, 101, .45);
+      border-radius: 6px;
+      background: rgba(197, 166, 101, .12);
+      color: var(--gold-bright);
+      font: 700 13px/1 "Barlow Condensed", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .rank-steps {
+      padding: 24px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .req-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(190, 164, 102, .11);
+    }
+
+    .req-step:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .req-num {
+      width: 34px;
+      height: 34px;
       flex-shrink: 0;
       display: grid;
       place-items: center;
       border: 1px solid rgba(197, 166, 101, .45);
-      border-radius: 10px;
-      background: rgba(197, 166, 101, .08);
+      border-radius: 8px;
+      background: rgba(197, 166, 101, .09);
       color: var(--gold-bright);
-      font-size: 20px;
+      font: 700 16px "Barlow Condensed", sans-serif;
     }
 
-    .leader-details {
+    .req-body {
+      flex: 1;
       min-width: 0;
     }
 
-    .leader-details .rank {
-      margin: 0 0 4px;
+    .req-body h4 {
+      margin: 2px 0 8px;
+      font: 700 21px/1.2 "Barlow Condensed", sans-serif;
+      letter-spacing: .02em;
+      color: var(--gold-bright);
+    }
+
+    .req-note {
+      margin: 0 0 8px;
+      color: #d7dccf;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .req-body ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #cfd4c8;
+      font-size: 13px;
+    }
+
+    .req-body li + li {
+      margin-top: 6px;
+    }
+
+    .code-inline {
+      display: inline-block;
+      padding: 1px 7px;
+      border: 1px solid rgba(197, 166, 101, .28);
+      border-radius: 5px;
+      background: rgba(11, 16, 12, .7);
+      color: var(--gold-bright);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+
+    /* OATH BOX */
+    .oath-box {
+      margin: 12px 0;
+      padding: 16px 18px;
+      border: 1px solid rgba(197, 166, 101, .3);
+      border-radius: 9px;
+      background: rgba(9, 14, 10, .78);
+    }
+
+    .oath-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .oath-top span {
       color: var(--gold);
       font-size: 10.5px;
       font-weight: 800;
@@ -276,22 +409,55 @@
       text-transform: uppercase;
     }
 
-    .leader-details h3 {
-      margin: 0 0 6px;
-      font: 700 25px/1.1 "Barlow Condensed", sans-serif;
-      letter-spacing: .02em;
-      color: var(--text);
-    }
-
-    .leader-contact {
-      margin: 0;
-      color: var(--muted);
-      font-size: 12.5px;
-    }
-
-    .leader-contact span {
+    .copy-btn {
+      padding: 5px 11px;
+      border: 1px solid rgba(197, 166, 101, .45);
+      border-radius: 6px;
+      background: rgba(197, 166, 101, .12);
       color: var(--gold-bright);
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(197, 166, 101, .24);
+    }
+
+    .oath-text {
+      margin: 0;
+      color: #eceee6;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* DISCORD BUTTONS */
+    .discord-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .discord-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 13px;
+      border: 1px solid rgba(197, 166, 101, .34);
+      border-radius: 7px;
+      background: rgba(197, 166, 101, .09);
+      color: var(--gold-bright);
+      font-size: 12px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .discord-btn:hover {
+      background: rgba(197, 166, 101, .2);
+      border-color: var(--gold);
+      transform: translateY(-1px);
     }
 
     /* FOOTER */
@@ -371,9 +537,6 @@
       .header-inner {
         gap: 15px;
       }
-      .leader-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
     }
 
     @media (max-width: 780px) {
@@ -402,6 +565,10 @@
         padding: 12px;
         font-size: 12px;
       }
+      .rank-card-header,
+      .rank-steps {
+        padding: 20px;
+      }
       .footer-inner {
         padding: 22px 0;
         flex-wrap: wrap;
@@ -419,8 +586,9 @@
       .footer-inner {
         width: min(100% - 30px, var(--max));
       }
-      .leader-grid {
-        grid-template-columns: 1fr;
+      .req-step {
+        flex-direction: column;
+        gap: 10px;
       }
       .footer-inner p {
         width: 100%;
@@ -439,9 +607,9 @@
       <nav class="main-nav" id="mainNav">
         <a class="nav-link" href="index.html">Главная</a>
         <a class="nav-link" href="academy.html">Правила</a>
-        <a class="nav-link active" href="leadership.html">Руководство</a>
+        <a class="nav-link" href="leadership.html">Руководство</a>
         <a class="nav-link" href="rules.html">Подразделения</a>
-        <a class="nav-link" href="promotions.html">Повышения</a>
+        <a class="nav-link active" href="promotions.html">Повышения</a>
         <a class="nav-link" href="exams.html">Экзамены</a>
         <a class="nav-link" href="materials.html">Материалы</a>
       </nav>
@@ -450,25 +618,283 @@
 
   <main>
     <section class="content-section page-section" id="promotions">
-      <div class="page-banner"><p class="eyebrow">CAREER PROGRESSION</p><h2>Система повышений</h2><p>Что важно знать для дальнейшего продвижения по службе.</p></div>
-      <div class="section-wrap narrow">
-        <div class="section-heading left"><p class="eyebrow">GROW WITH SANG</p><h2>Развитие и требования</h2><p>Повышение зависит от выполнения установленных критериев. Точные нормы, сроки и отчётность должны соответствовать регламенту вашего сервера.</p></div>
-        <div class="step-list">
-          <article class="step"><span>01</span><div><h3>Пройти обучение</h3><p>Изучить вводный материал и освоить базовые обязанности.</p></div></article>
-          <article class="step"><span>02</span><div><h3>Подтвердить знания</h3><p>Подготовиться и успешно пройти необходимые проверки.</p></div></article>
-          <article class="step"><span>03</span><div><h3>Выполнять нормативы</h3><p>Соблюдать требования по активности, дисциплине и служебным задачам.</p></div></article>
-          <article class="step"><span>04</span><div><h3>Подать запрос на повышение</h3><p>Оформить отчёт или заявку по установленной форме, если это предусмотрено регламентом.</p></div></article>
+      <div class="page-banner">
+        <div class="page-banner-inner">
+          <p class="eyebrow">CAREER PROGRESSION</p>
+          <h2>Система повышений</h2>
+          <p>Пошаговые требования, нормативы и порядок оформления отчётов для продвижения по службе в SANG.</p>
         </div>
-        <div class="notice"><strong>Для заполнения</strong><p>Добавьте таблицу званий: текущее звание, следующее звание, необходимые задания, нормативы и ссылки на форму отчёта.</p></div>
+      </div>
+
+      <div class="section-wrap">
+        <!-- ВАЖНАЯ ИНФОРМАЦИЯ -->
+        <aside class="important-box">
+          <div class="important-header">⚠ Важная информация по повышению</div>
+          <ul>
+            <li>Повышение происходит <strong>1 раз в сутки</strong> (исключение: день блата / перевод / восстановление).</li>
+            <li>Имя, фамилия и Static ID в отчёте должны <strong>строго совпадать</strong> с данными на скриншотах (HUD) и в планшете, иначе отчёт будет отклонён.</li>
+          </ul>
+        </aside>
+
+        <!-- БЫСТРАЯ НАВИГАЦИЯ ПО РАНГАМ -->
+        <nav class="rank-tabs" aria-label="Переход к рангам">
+          <a class="rank-tab" href="#rank-1-2">1 → 2 ранг</a>
+          <a class="rank-tab" href="#rank-2-3">2 → 3 ранг</a>
+          <a class="rank-tab" href="#rank-3-4">3 → 4 ранг</a>
+        </nav>
+
+        <div class="rank-stack">
+          <!-- 1 НА 2 РАНГ -->
+          <article class="rank-card" id="rank-1-2">
+            <div class="rank-card-header">
+              <h3>Повышение с 1 на 2 ранг</h3>
+              <span class="rank-badge">STAGE 01 · ACADEMY</span>
+            </div>
+
+            <div class="rank-steps">
+              <div class="req-step">
+                <span class="req-num">01</span>
+                <div class="req-body">
+                  <h4>Получение удостоверения</h4>
+                  <ul>
+                    <li>Подойдите к NPC-сержанту (<span class="code-inline">E</span> → получение документов).</li>
+                    <li>Включите боди-камеру (<span class="code-inline">F2</span> → Настройки → Назначение клавиш → Боди-камера) и сделайте полноэкранный скриншот удостоверения.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">02</span>
+                <div class="req-body">
+                  <h4>Получение формы ACADEMY</h4>
+                  <ul>
+                    <li>Возьмите форму <strong>ACADEMY</strong> на первом этаже главного здания.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">03</span>
+                <div class="req-body">
+                  <h4>Сдача присяги</h4>
+                  <ul>
+                    <li>Найдите сотрудника MA, MCE или High Staff (на территории FZ или через <span class="code-inline">/fb Кто может принять присягу?</span>).</li>
+                    <li>Включите анимацию <strong>«Отдать честь 1»</strong> и отправьте в чат текст присяги:</li>
+                  </ul>
+
+                  <div class="oath-box">
+                    <div class="oath-top">
+                      <span>Текст воинской присяги</span>
+                      <button type="button" class="copy-btn" id="copyOathBtn">Скопировать текст</button>
+                    </div>
+                    <p class="oath-text" id="oathText">Я, [Имя Фамилия], торжественно клянусь, что я буду защищать Конституцию штата Сан-Андреас от всех её врагов, как иностранных так и внутренних, относиться к ней с верой и преданностью, а также беспрекословно подчиняться Губернатору штата Сан-Андреас. Я принимаю на себя это обязательство свободно, понимаю его буквально и не имею цели его нарушить. Я хорошо и добросовестно буду исполнять обязанности, налагаемые на меня тем званием, которое я получаю. И да поможет мне Бог!</p>
+                  </div>
+
+                  <ul>
+                    <li>Дождитесь отыгровки принимающего в чате: <span class="code-inline">Присяга принята у [Имя Фамилия]</span> и сделайте полноэкранный скриншот.</li>
+                    <li>На скриншоте должно быть видно: включённая боди-камера, активная анимация и отыгровка с упоминанием вашего имени в чате.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">04</span>
+                <div class="req-body">
+                  <h4>Получение доступа в State Fractions</h4>
+                  <ul>
+                    <li>В Discord State Fractions выберите сервер <strong>«Memphis»</strong>.</li>
+                    <li>В канале получения ролей нажмите <strong>«Получить роль»</strong> (дождитесь уведомления «Роли успешно получены»).</li>
+                    <li>Поставьте никнейм на сервере по форме: <span class="code-inline">MEM | Имя Фамилия | StaticID</span> (Пример: <span class="code-inline">MEM | Temka Mythic | 9487</span>).</li>
+                    <li>Напишите <span class="code-inline">+</span> в любом текстовом чате, нажмите ЛКМ на свой профиль и сделайте скриншот.</li>
+                    <li>На скриншоте должно быть видно: никнейм по форме, синяя и серая роли.</li>
+                  </ul>
+                  <div class="discord-links">
+                    <a class="discord-btn" href="https://discord.com/channels/1275452200516321446/1316471180965843005" target="_blank" rel="noopener">Канал получения ролей (State Fractions) ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">05</span>
+                <div class="req-body">
+                  <h4>Отчёт и запрос на повышение</h4>
+                  <ul>
+                    <li>Загрузите скриншоты на фотохостинг и отправьте отчёт в Discord.</li>
+                    <li>После одобрения отчёта оставьте заявку на повышение.</li>
+                  </ul>
+                  <div class="discord-links">
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1529072769650921562" target="_blank" rel="noopener">Отправить отчёт ↗</a>
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1531793723892043887" target="_blank" rel="noopener">Заявка на повышение ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 НА 3 РАНГ -->
+          <article class="rank-card" id="rank-2-3">
+            <div class="rank-card-header">
+              <h3>Повышение со 2 на 3 ранг</h3>
+              <span class="rank-badge">STAGE 02 · CADET</span>
+            </div>
+
+            <div class="rank-steps">
+              <div class="req-step">
+                <span class="req-num">01</span>
+                <div class="req-body">
+                  <h4>Сдача экзамена сотруднику MCE</h4>
+                  <ul>
+                    <li>Заполните форму записи на лекцию в Discord и зайдите в свободный голосовой канал <strong>«Lecture»</strong>.</li>
+                    <li>Экзамен засчитывается только после реакции <strong>✅</strong> от сотрудника MCE на ваш запрос.</li>
+                  </ul>
+                  <div class="discord-links">
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1514608101817450608" target="_blank" rel="noopener">Запись на лекцию / экзамен ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">02</span>
+                <div class="req-body">
+                  <h4>Участие в 3 мероприятиях (МП)</h4>
+                  <p class="req-note">К МП относятся: поставки, крафты, тренировки, отбитие ФЗ, отбитие Острова / Дропа и т. п. Обязательно подписывайте каждое МП в отчёте.</p>
+                  <ul>
+                    <li><strong>Общие требования:</strong> полноэкранные скриншоты, включённая боди-камера, минимум 2 скриншота с каждого МП.</li>
+                    <li><strong>Поставки и крафты:</strong> на скриншоте должен быть ящик в руках или колонна с «Матовозкой» + видно, что вы в группе. Интервал между скриншотами для зачёта разных поставок — не менее 20 минут.</li>
+                    <li><strong>Дроп:</strong> на карте видна зона дропа и метки группы.</li>
+                    <li><strong>Тренировка:</strong> длительность от 15 минут; 2 скриншота с отыгровками проводящего в <span class="code-inline">/do</span> (Начал(а) тренировку и Закончил(а) тренировку).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">03</span>
+                <div class="req-body">
+                  <h4>Отчёт и запрос на повышение</h4>
+                  <ul>
+                    <li>Отправьте отчёт со скриншотами в соответствующий канал Discord.</li>
+                    <li>После одобрения оставьте заявку на повышение.</li>
+                  </ul>
+                  <div class="discord-links">
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1529072769650921562" target="_blank" rel="noopener">Отправить отчёт ↗</a>
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1531793723892043887" target="_blank" rel="noopener">Заявка на повышение ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 НА 4 РАНГ -->
+          <article class="rank-card" id="rank-3-4">
+            <div class="rank-card-header">
+              <h3>Повышение с 3 на 4 ранг</h3>
+              <span class="rank-badge">STAGE 03 · GRADUATION</span>
+            </div>
+
+            <div class="rank-steps">
+              <div class="req-step">
+                <span class="req-num">01</span>
+                <div class="req-body">
+                  <h4>Участие в 4 поставках (крафты: меды, техи, оружейки)</h4>
+                  <p class="req-note">Эти поставки нельзя использовать для замены в будущем.</p>
+                  <ul>
+                    <li>Полноэкранные скриншоты + включённая боди-камера на каждом снимке.</li>
+                    <li>На скриншоте должен быть ящик в руках или колонна с «Матовозкой» + видно, что вы в группе.</li>
+                    <li>Для зачёта одной поставки как нескольких интервал между скриншотами должен составлять <strong>20–30 минут</strong>.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">02</span>
+                <div class="req-body">
+                  <h4>Прослушать 2 лекции и пройти медосмотр</h4>
+                  <ul>
+                    <li>Подайте запрос в канале Discord и ожидайте проведения.</li>
+                  </ul>
+                  <div class="discord-links">
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1562547057158258778" target="_blank" rel="noopener">Запрос на лекции и медосмотр ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="req-step">
+                <span class="req-num">03</span>
+                <div class="req-body">
+                  <h4>Отчёт и запрос на повышение</h4>
+                  <ul>
+                    <li>Отправьте отчёт со скриншотами в канал отчётов.</li>
+                    <li>После одобрения оставьте заявку на повышение.</li>
+                  </ul>
+                  <div class="discord-links">
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1529072769650921562" target="_blank" rel="noopener">Отправить отчёт ↗</a>
+                    <a class="discord-btn" href="https://discord.com/channels/1514608098621526096/1531793723892043887" target="_blank" rel="noopener">Заявка на повышение ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
-    <p>DISCIPLINE · HONOR · DUTY</p>
-    <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">SANG <span>/ MILITARY ACADEMY</span></a>
+      <p>MAJESTIC · MEMPHIS · SANG</p>
+      <p class="copyright">© <span id="year"></span> SANG Military Academy. Информационный портал.</p>
+    </div>
   </footer>
+
   <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
-  <script src="script.js"></script>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop() || "promotions.html";
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+      });
+    }
+
+    const copyBtn = document.getElementById("copyOathBtn");
+    const oathText = document.getElementById("oathText");
+    if (copyBtn && oathText) {
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(oathText.textContent.trim()).then(() => {
+          const original = copyBtn.textContent;
+          copyBtn.textContent = "Скопировано ✓";
+          setTimeout(() => {
+            copyBtn.textContent = original;
+          }, 2000);
+        });
+      });
+    }
+
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTop.classList.toggle("visible", window.scrollY > 300);
+    });
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 </html>

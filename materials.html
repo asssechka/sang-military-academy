@@ -1,246 +1,205 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Памятка SANG</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Oswald:wght@400;500;600;700&display=swap');
-:root {
-    --bg: #0b0f0d;
-    --card: #141b16;
-    --card-light: #1b241d;
-    --gold: #c5a45e;
-    --gold-light: #e5c77f;
-    --text: #e8e8e3;
-    --muted: #a5aaa2;
-    --border: rgba(197,164,94,.25);
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body {
-    background:
-        radial-gradient(ellipse at top, #20291f 0%, transparent 55%),
-        var(--bg);
-    color: var(--text);
-    font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
-}
-.container {
-    width: min(1150px, 92%);
-    margin: auto;
-    padding: 45px 0 70px;
-}
-.eyebrow {
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-}
-h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(36px, 6vw, 58px);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.1;
-}
-h1 span {
-    color: var(--gold);
-}
-.subtitle {
-    color: var(--muted);
-    margin-top: 13px;
-    line-height: 1.7;
-    max-width: 700px;
-}
-.notice {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    background: linear-gradient(110deg, #302817, #191d16);
-    border: 1px solid rgba(197,164,94,.45);
-    border-left: 4px solid var(--gold);
-    border-radius: 8px;
-    padding: 22px 24px;
-    margin-bottom: 35px;
-}
-.notice-icon {
-    color: var(--gold-light);
-    font-size: 25px;
-}
-.notice strong {
-    display: block;
-    color: var(--gold-light);
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-}
-.notice p {
-    color: #d0d0c9;
-    line-height: 1.6;
-}
-.section-heading {
-    font-family: 'Oswald', sans-serif;
-    font-size: 27px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-}
-.section-heading span {
-    color: var(--gold);
-    margin-right: 12px;
-}
-.documents {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-.document-card {
-    background: linear-gradient(145deg, var(--card-light), var(--card));
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    padding: 25px;
-    position: relative;
-    overflow: hidden;
-}
-.document-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-}
-.card-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.card-number {
-    color: var(--gold);
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-.card-tag {
-    color: var(--gold-light);
-    border: 1px solid var(--border);
-    padding: 5px 9px;
-    border-radius: 4px;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-.document-card h3 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-.card-description {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 19px;
-}
-.document-links {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-.document-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 12px 14px;
-    background: rgba(255,255,255,.035);
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 5px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 14px;
-    transition: .2s ease;
-}
-.document-link:hover {
-    background: rgba(197,164,94,.12);
-    border-color: var(--gold);
-    color: var(--gold-light);
-    transform: translateX(3px);
-}
-.arrow {
-    color: var(--gold);
-    font-size: 17px;
-    flex-shrink: 0;
-}
-.missing-link {
-    color: var(--muted);
-    font-size: 13px;
-    padding: 13px;
-    border: 1px dashed var(--border);
-    border-radius: 5px;
-}
-.reminder {
-    margin-top: 25px;
-    padding: 20px 22px;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    color: var(--muted);
-    line-height: 1.7;
-    background: rgba(255,255,255,.025);
-}
-.reminder strong {
-    color: var(--gold-light);
-}
-footer {
-    margin-top: 35px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    color: #777e75;
-    font-size: 11px;
-    letter-spacing: 3px;
-}
-@media (max-width: 700px) {
-    .documents {
-        grid-template-columns: 1fr;
-    }
-    .container {
-        padding-top: 30px;
-    }
-    .document-card {
-        padding: 20px;
-    }
-    .notice {
-        padding: 17px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Памятка SANG | Military Academy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .memo-page {
+            width: min(1150px, 92%);
+            margin: 55px auto 90px;
+        }
+
+        .memo-header {
+            padding: 25px 0 35px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .memo-label {
+            color: var(--gold-light);
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .memo-header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(36px, 5vw, 58px);
+            text-transform: uppercase;
+            margin: 12px 0;
+        }
+
+        .memo-header h1 span {
+            color: var(--gold-light);
+        }
+
+        .memo-description {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 720px;
+        }
+
+        .memo-notice {
+            display: flex;
+            gap: 18px;
+            padding: 23px;
+            margin-bottom: 45px;
+            background: rgba(197, 164, 94, .09);
+            border: 1px solid rgba(197, 164, 94, .4);
+            border-left: 4px solid var(--gold-light);
+            border-radius: 5px;
+        }
+
+        .memo-notice-icon {
+            color: var(--gold-light);
+            font-size: 25px;
+        }
+
+        .memo-notice h3 {
+            color: var(--gold-light);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            margin: 0 0 8px;
+        }
+
+        .memo-notice p {
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .memo-section {
+            margin: 45px 0;
+        }
+
+        .memo-section-heading {
+            margin-bottom: 22px;
+        }
+
+        .memo-number {
+            color: var(--gold-light);
+            font-size: 11px;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        .memo-section-heading h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin: 8px 0;
+        }
+
+        .memo-section-heading p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .memo-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 25px;
+            margin-bottom: 18px;
+        }
+
+        .memo-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 21px;
+            margin: 0 0 10px;
+        }
+
+        .memo-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0 0 16px;
+        }
+
+        .memo-status {
+            display: inline-block;
+            padding: 6px 10px;
+            margin-bottom: 14px;
+            color: var(--gold-light);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .memo-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .memo-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 16px 18px;
+            color: var(--text);
+            text-decoration: none;
+            background: rgba(255,255,255,.025);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: .2s ease;
+        }
+
+        .memo-link:hover {
+            color: var(--gold-light);
+            border-color: var(--gold-light);
+            background: rgba(197,164,94,.07);
+            transform: translateY(-2px);
+        }
+
+        .memo-link span:last-child {
+            color: var(--gold-light);
+        }
+
+        .memo-footer {
+            margin-top: 45px;
+            padding: 24px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 650px) {
+            .memo-links {
+                grid-template-columns: 1fr;
+            }
+
+            .memo-card {
+                padding: 19px;
+            }
+
+            .memo-notice {
+                padding: 17px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="site-topbar">
+
+<header class="site-topbar">
     <div class="site-topbar-inner">
         <a href="index.html" class="site-brand">
-            ✦ SANG <span>Памятки та Законопроекты</span>
+            ✦ SANG <span>Military Academy</span>
         </a>
-        <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Открыть меню">
-            ☰
-        </button>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Открыть меню">☰</button>
+
         <nav class="site-nav" id="siteNav">
             <a href="index.html">Главная</a>
             <a href="rules.html">Правила</a>
@@ -248,89 +207,158 @@ footer {
             <a href="academy.html">Подразделения</a>
             <a href="promotions.html">Повышения</a>
             <a href="exams.html">Экзамены</a>
-            <a href="materials.html" class="active">Материалы</a>
+            <a href="materials.html" class="active">Памятка SANG</a>
         </nav>
     </div>
-</div>
-<div class="notice">
-    <div class="notice-icon">⚠</div>
-    <div>
-        <strong>Важная информация</strong>
-        <p>
-            Не нужно заучивать все документы наизусть.
-            Используйте ссылки ниже, чтобы при необходимости
-            открыть нужный текст и ознакомиться с ним.
+</header>
+
+<main class="memo-page">
+
+    <section class="memo-header">
+        <div class="memo-label">San Andreas National Guard</div>
+        <h1>Памятка <span>SANG</span></h1>
+        <p class="memo-description">
+            Основные документы и нормативные материалы,
+            необходимые для службы в рядах Национальной гвардии.
         </p>
+    </section>
+
+    <section class="memo-notice">
+        <div class="memo-notice-icon">⚠</div>
+        <div>
+            <h3>Важная информация</h3>
+            <p>
+                Не нужно заучивать все документы наизусть.
+                Используйте ссылки ниже, чтобы при необходимости
+                открыть нужный текст и ознакомиться с ним.
+            </p>
+        </div>
+    </section>
+
+    <!-- УСТАВ -->
+
+    <section class="memo-section">
+        <div class="memo-section-heading">
+            <div class="memo-number">01 / INTERNAL DOCUMENT</div>
+            <h2>Устав SANG</h2>
+            <p>Внутренний документ Национальной гвардии.</p>
+        </div>
+
+        <div class="memo-card">
+            <span class="memo-status">ОБЯЗАТЕЛЬНО К ИЗУЧЕНИЮ</span>
+            <h3>Устав SANG</h3>
+            <p>
+                Это наш внутренний устав. Его необходимо знать
+                слово в слово, без изменений и сокращений.
+            </p>
+            <a class="memo-link" href="#" target="_blank">
+                <span>Ссылка на внутренний устав будет добавлена</span>
+                <span>↗</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ЗАКОНОДАТЕЛЬСТВО -->
+
+    <section class="memo-section">
+        <div class="memo-section-heading">
+            <div class="memo-number">02 / STATE LEGISLATION</div>
+            <h2>Законодательство</h2>
+            <p>Нормативно-правовые документы штата San Andreas.</p>
+        </div>
+
+        <div class="memo-links">
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/ugolovnyi-kodeks-shtata-san-andreas.3607892/" target="_blank" rel="noopener">
+                <span>Уголовный кодекс</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/kodeks-ob-administrativnykh-pravonarusheniyakh-shtata-san-andreas.3505180/" target="_blank" rel="noopener">
+                <span>Административный кодекс</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/protsessual-nyi-kodeks-shtata-san-andreas.3607902/" target="_blank" rel="noopener">
+                <span>Процессуальный кодекс</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/dorozhnyi-kodeks-shtata-san-andreas.3505137/" target="_blank" rel="noopener">
+                <span>Дорожный кодекс</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/zakon-o-zakrytykh-i-okhranyayemykh-territoriyakh-shtata-san-andreas.3505149/" target="_blank" rel="noopener">
+                <span>Закон о закрытых и охраняемых территориях</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/zakon-o-natsional-noi-gvardii-shtata-san-andreas.3505255/" target="_blank" rel="noopener">
+                <span>Закон о Национальной гвардии</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/trudovoi-kodeks-shtata-san-andreas.3505177/" target="_blank" rel="noopener">
+                <span>Трудовой кодекс</span><span>↗</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ПРАВИЛА ПРОЕКТА -->
+
+    <section class="memo-section">
+        <div class="memo-section-heading">
+            <div class="memo-number">03 / PROJECT REGULATIONS</div>
+            <h2>Правила проекта</h2>
+            <p>Правила взаимодействия и проведения мероприятий.</p>
+        </div>
+
+        <div class="memo-links">
+            <a class="memo-link" href="https://forum.majestic-rp.ru/forums/general-server-rules/" target="_blank" rel="noopener">
+                <span>Основные правила проекта</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-gosudarstvennykh-organizatsii.8672/" target="_blank" rel="noopener">
+                <span>Правила государственных организаций</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-kriminal-nykh-organizatsii.3977/" target="_blank" rel="noopener">
+                <span>Правила криминальных организаций</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-perekhvata-postavok.123972/" target="_blank" rel="noopener">
+                <span>Перехват поставок</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-voiny-za-airdrop.210836/" target="_blank" rel="noopener">
+                <span>Война за AirDrop</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-ograblenii-i-pokhishchenii.8254/" target="_blank" rel="noopener">
+                <span>Ограбления и похищения</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-territorii-forta-zankudo.8115/" target="_blank" rel="noopener">
+                <span>Оборона Форта-Занкудо</span><span>↗</span>
+            </a>
+
+            <a class="memo-link" href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-ostrova-kaio-periko.645651/" target="_blank" rel="noopener">
+                <span>Оборона Кайо-Перико</span><span>↗</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="memo-footer">
+        <strong>ПОМНИ:</strong><br>
+        Знание внутреннего устава SANG обязательно.
+        Остальные документы используй как справочник,
+        когда необходимо уточнить конкретное положение.
     </div>
-</div>
-<h2 class="section-heading"><span>01</span> Документы SANG</h2>
-<div class="documents">
-    <section class="document-card">
-        <div class="card-top">
-            <span class="card-number">DOCUMENT / 01</span>
-            <span class="card-tag">Обязательно</span>
-        </div>
-        <h3>Устав SANG</h3>
-        <p class="card-description">
-            Внутренний документ Национальной гвардии.
-            Необходимо знать слово в слово, без изменений и сокращений.
-        </p>
-        <div class="document-links">
-            <div class="missing-link">
-                Ссылка на внутренний устав будет добавлена.
-            </div>
-        </div>
-    </section>
-    <section class="document-card">
-        <div class="card-top">
-            <span class="card-number">DOCUMENT / 02</span>
-            <span class="card-tag">Справочник</span>
-        </div>
-        <h3>Законодательство</h3>
-        <p class="card-description">
-            Нормативно-правовые документы штата San Andreas.
-        </p>
-        <div class="document-links">
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/ugolovnyi-kodeks-shtata-san-andreas.3607892/" target="_blank" rel="noopener">Уголовный кодекс <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/kodeks-ob-administrativnykh-pravonarusheniyakh-shtata-san-andreas.3505180/" target="_blank" rel="noopener">Административный кодекс <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/protsessual-nyi-kodeks-shtata-san-andreas.3607902/" target="_blank" rel="noopener">Процессуальный кодекс <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/dorozhnyi-kodeks-shtata-san-andreas.3505137/" target="_blank" rel="noopener">Дорожный кодекс <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/zakon-o-zakrytykh-i-okhranyayemykh-territoriyakh-shtata-san-andreas.3505149/" target="_blank" rel="noopener">Закон о закрытых и охраняемых территориях <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/zakon-o-natsional-noi-gvardii-shtata-san-andreas.3505255/" target="_blank" rel="noopener">Закон о Национальной гвардии <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/trudovoi-kodeks-shtata-san-andreas.3505177/" target="_blank" rel="noopener">Трудовой кодекс <span class="arrow">↗</span></a>
-        </div>
-    </section>
-    <section class="document-card">
-        <div class="card-top">
-            <span class="card-number">DOCUMENT / 03</span>
-            <span class="card-tag">Справочник</span>
-        </div>
-        <h3>Правила проекта</h3>
-        <p class="card-description">
-            Правила взаимодействия, проведения мероприятий
-            и деятельности государственных и криминальных организаций.
-        </p>
-        <div class="document-links">
-            <a class="document-link" href="https://forum.majestic-rp.ru/forums/general-server-rules/" target="_blank" rel="noopener">Основные правила проекта <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-gosudarstvennykh-organizatsii.8672/" target="_blank" rel="noopener">Правила государственных организаций <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-kriminal-nykh-organizatsii.3977/" target="_blank" rel="noopener">Правила криминальных организаций <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-perekhvata-postavok.123972/" target="_blank" rel="noopener">Перехват поставок <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-voiny-za-airdrop.210836/" target="_blank" rel="noopener">Война за AirDrop <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-ograblenii-i-pokhishchenii.8254/" target="_blank" rel="noopener">Ограбления и похищения <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-territorii-forta-zankudo.8115/" target="_blank" rel="noopener">Оборона Форта Занкудо <span class="arrow">↗</span></a>
-            <a class="document-link" href="https://forum.majestic-rp.ru/threads/pravila-napadeniya-oborony-ostrova-kaio-periko.645651/" target="_blank" rel="noopener">Оборона Кайо-Перико <span class="arrow">↗</span></a>
-        </div>
-    </section>
-</div>
-<div class="reminder">
-    <strong>Помни:</strong>
-    знание внутреннего устава SANG обязательно.
-    Остальные документы используй как справочник,
-    когда необходимо уточнить конкретное положение.
-</div>
-<footer>
-    SANG · SAN ANDREAS NATIONAL GUARD
-</footer>
+
 </main>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+
+    menuToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('open');
+    });
+</script>
+
 </body>
 </html>
